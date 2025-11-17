@@ -1,5 +1,6 @@
 // © 2025 American Community Developers, Inc. All Rights Reserved. See LICENSE.txt for details.
 
+using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -39,6 +40,7 @@ public static class Approvals
         ShouldMatchApproved(received, _ => { }, sourceFilePath, memberName);
     }
 
+    private static readonly ConcurrentDictionary<string, object> _approvalFileLocks = new();
     public static void ShouldMatchApproved(this string received, Action<ShouldMatchApprovedOptions> configurator, [CallerFilePath] string sourceFilePath = "", [CallerMemberName] string memberName = "")
     {
         var options = new ShouldMatchApprovedOptions();
@@ -53,41 +55,45 @@ public static class Approvals
         var approvedFile = Path.Combine(directory, $"{sourceFileName}.{memberName}{discriminator}.approved.txt");
         var receivedFile = Path.Combine(directory, $"{sourceFileName}.{memberName}{discriminator}.received.txt");
 
-        // Normalize line endings to \r\n for consistency
-        var normalizedReceived = received.Replace("\r\n", "\n").Replace("\n", "\r\n");
+        // Ensure thread-safe access per approval file (as some test files, and hence approval files, are shared across projects)
+        var fileLock = _approvalFileLocks.GetOrAdd(approvedFile, _ => new object());
+        lock (fileLock) {
+            // Normalize line endings to \r\n for consistency
+            var normalizedReceived = received.Replace("\r\n", "\n").Replace("\n", "\r\n");
 
-        // Write the received content
-        File.WriteAllText(receivedFile, normalizedReceived);
+            // Write the received content
+            File.WriteAllText(receivedFile, normalizedReceived);
 
-        // Check if approved file exists
-        if (!File.Exists(approvedFile)) {
+            // Check if approved file exists
+            if (!File.Exists(approvedFile)) {
 #if CI
             throw new InvalidOperationException($"Approved file not found: {approvedFile}\nReceived content written to: {receivedFile}");
 #else
-            // In local development, copy received to approved
-            File.Copy(receivedFile, approvedFile, overwrite: true);
-            return;
+                // In local development, copy received to approved
+                File.Copy(receivedFile, approvedFile, overwrite: true);
+                return;
 #endif
-        }
+            }
 
-        // Read and normalize approved content
-        var approved = File.ReadAllText(approvedFile);
-        var normalizedApproved = approved.Replace("\r\n", "\n").Replace("\n", "\r\n");
+            // Read and normalize approved content
+            var approved = File.ReadAllText(approvedFile);
+            var normalizedApproved = approved.Replace("\r\n", "\n").Replace("\n", "\r\n");
 
-        // Compare the contents
-        if (normalizedApproved != normalizedReceived) {
-            var diffContext = GetDiffContext(normalizedApproved, normalizedReceived);
-            var message = $"Approval test failed for {memberName}\n" +
-                         $"Approved file: {approvedFile}\n" +
-                         $"Received file: {receivedFile}\n" +
-                         $"The received content does not match the approved content.\n" +
-                         diffContext;
-            throw new InvalidOperationException(message);
-        }
+            // Compare the contents
+            if (normalizedApproved != normalizedReceived) {
+                var diffContext = GetDiffContext(normalizedApproved, normalizedReceived);
+                var message = $"Approval test failed for {memberName}\n" +
+                             $"Approved file: {approvedFile}\n" +
+                             $"Received file: {receivedFile}\n" +
+                             $"The received content does not match the approved content.\n" +
+                             diffContext;
+                throw new InvalidOperationException(message);
+            }
 
-        // If they match, delete the received file
-        if (File.Exists(receivedFile)) {
-            File.Delete(receivedFile);
+            // If they match, delete the received file
+            if (File.Exists(receivedFile)) {
+                File.Delete(receivedFile);
+            }
         }
     }
 
