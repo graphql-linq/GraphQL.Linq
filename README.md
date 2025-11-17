@@ -34,7 +34,7 @@ The base package [`GraphQL.Linq`](https://www.nuget.org/packages/GraphQL.Linq/) 
 
 Before using GraphQL.Linq, ensure you have:
 
-- **[GraphQL.NET](https://www.nuget.org/packages/GraphQL/) 8.7.0+** - The underlying GraphQL server library ([documentation](https://graphql-dotnet.github.io/))
+- **[GraphQL.NET](https://www.nuget.org/packages/GraphQL/) 8.8.0+** - The underlying GraphQL server library ([documentation](https://graphql-dotnet.github.io/))
 - **[Entity Framework Core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/)** or **[LinqToDB](https://www.nuget.org/packages/linq2db/)** - Already configured in your application with a working DbContext
 - **Basic GraphQL Knowledge** - Familiarity with GraphQL concepts (queries, mutations, types, fields)
 - **LINQ Experience** - Understanding of LINQ expressions and IQueryable
