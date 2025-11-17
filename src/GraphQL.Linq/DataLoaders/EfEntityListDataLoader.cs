@@ -54,7 +54,7 @@ public class EfEntityListDataLoader<TDbContext, TParentKey, TContextSource, TObj
 
     /// <inheritdoc cref="EfEntityListDataLoader{TDbContext, TParentKey, TContextSource, TObject, TReturn}.EfEntityListDataLoader(Func{IResolveEfFieldContext{TDbContext, TContextSource}, IQueryable{TObject}}, Expression{Func{TObject, TParentKey}}, Expression{Func{TObject, TReturn}})"/>
     public EfEntityListDataLoader(Func<IResolveEfFieldContext<TDbContext, TContextSource>, Task<IQueryable<TObject>>> baseQueryFunc, Expression<Func<TObject, TParentKey>> keySelector, Expression<Func<TObject, TReturn>> itemSelector)
-        : base(true, 900)
+        : base(false, 1000)
     {
         _baseQueryFuncAsync = baseQueryFunc ?? throw new ArgumentNullException(nameof(baseQueryFunc));
         _keySelector = keySelector ?? throw new ArgumentNullException(nameof(keySelector));
@@ -87,5 +87,4 @@ public class EfEntityListDataLoader<TDbContext, TParentKey, TContextSource, TObj
             }
         }
     }
-
 }

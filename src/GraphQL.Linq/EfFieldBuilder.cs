@@ -10,7 +10,10 @@ namespace GraphQL.Linq;
 /// <inheritdoc cref="FieldBuilder{TSourceType, TReturnType}"/>
 public class EfFieldBuilder<TDbContext, TSourceType, TReturnType> : FieldBuilder<TSourceType, TReturnType>
 {
-    internal EfFieldBuilder(FieldBuilder<TSourceType, TReturnType> fieldBuilder) : base(fieldBuilder.FieldType)
+    /// <summary>
+    /// Initializes a new instance of the EfFieldBuilder class using the specified field builder.
+    /// </summary>
+    public EfFieldBuilder(FieldBuilder<TSourceType, TReturnType> fieldBuilder) : base(fieldBuilder.FieldType)
     {
     }
 

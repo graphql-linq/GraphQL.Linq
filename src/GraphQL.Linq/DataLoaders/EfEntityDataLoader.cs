@@ -60,7 +60,7 @@ public class EfEntityDataLoader<TDbContext, TKey, TContextSource, TObject, TRetu
         Func<IResolveEfFieldContext<TDbContext, TContextSource>, Task<IQueryable<TObject>>> baseQueryFunc,
         Expression<Func<TObject, TKey>> keySelector,
         Expression<Func<TObject, TReturn>> itemSelector)
-        : base(true, 900)
+        : base(false, 1000)
     {
         _baseQueryFuncAsync = baseQueryFunc ?? throw new ArgumentNullException(nameof(baseQueryFunc));
         _keySelector = keySelector ?? throw new ArgumentNullException(nameof(keySelector));

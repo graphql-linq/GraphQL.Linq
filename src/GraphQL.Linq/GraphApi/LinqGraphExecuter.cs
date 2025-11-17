@@ -80,7 +80,7 @@ public sealed class LinqGraphExecuter : ILinqGraphExecuter
 }
 
 /// <inheritdoc/>
-public sealed class LinqGraphExecuter<TDbContext> : ILinqGraphExecuter<TDbContext>
+public class LinqGraphExecuter<TDbContext> : ILinqGraphExecuter<TDbContext>
 {
     /// <summary>
     /// The GraphQL service used for query execution and context building.
@@ -97,28 +97,28 @@ public sealed class LinqGraphExecuter<TDbContext> : ILinqGraphExecuter<TDbContex
     }
 
     /// <inheritdoc/>
-    public Task<EfSource<TReturn>> ExecuteSingleAsync<TReturn>(IResolveFieldContext context, IQueryable<TReturn> query) where TReturn : class
+    public virtual Task<EfSource<TReturn>> ExecuteSingleAsync<TReturn>(IResolveFieldContext context, IQueryable<TReturn> query) where TReturn : class
     {
         var resolver = new SingleQueryResolver<TDbContext, object, TReturn>(_efGraphQLService, ctx => Task.FromResult(query), false);
         return resolver.ResolveAsync(context)!;
     }
 
     /// <inheritdoc/>
-    public Task<EfSource<TReturn>?> ExecuteSingleOrDefaultAsync<TReturn>(IResolveFieldContext context, IQueryable<TReturn> query) where TReturn : class
+    public virtual Task<EfSource<TReturn>?> ExecuteSingleOrDefaultAsync<TReturn>(IResolveFieldContext context, IQueryable<TReturn> query) where TReturn : class
     {
         var resolver = new SingleQueryResolver<TDbContext, object, TReturn>(_efGraphQLService, ctx => Task.FromResult(query), true);
         return resolver.ResolveAsync(context);
     }
 
     /// <inheritdoc/>
-    public Task<IList<EfSource<TReturn>>> ExecuteQueryAsync<TReturn>(IResolveFieldContext context, IQueryable<TReturn> query) where TReturn : class
+    public virtual Task<IList<EfSource<TReturn>>> ExecuteQueryAsync<TReturn>(IResolveFieldContext context, IQueryable<TReturn> query) where TReturn : class
     {
         var resolver = new QueryResolver<TDbContext, object, TReturn>(_efGraphQLService, ctx => Task.FromResult(query));
         return resolver.ResolveAsync(context);
     }
 
     /// <inheritdoc/>
-    public Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100) where TReturn : class
+    public virtual Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100) where TReturn : class
     {
         var resolver = new EfSimpleConnectionResolver<TDbContext, TReturn>(defaultPageSize);
 
@@ -137,7 +137,7 @@ public sealed class LinqGraphExecuter<TDbContext> : ILinqGraphExecuter<TDbContex
     }
 
     /// <inheritdoc/>
-    public async Task<IList<Tuple<TKey, EfSource<TReturn>>>> ExecuteQueryForKeysAsync<TKey, TObject, TReturn>(IResolveFieldContext context, IQueryable<TObject> query, Expression<Func<TObject, TKey>> keySelector, IEnumerable<TKey> keys, Expression<Func<TObject, TReturn>> itemSelector) where TObject : class where TReturn : class
+    public virtual async Task<IList<Tuple<TKey, EfSource<TReturn>>>> ExecuteQueryForKeysAsync<TKey, TObject, TReturn>(IResolveFieldContext context, IQueryable<TObject> query, Expression<Func<TObject, TKey>> keySelector, IEnumerable<TKey> keys, Expression<Func<TObject, TReturn>> itemSelector) where TObject : class where TReturn : class
     {
         var executer = new QueryExecuter<TDbContext, TReturn>();
         var efContext = _efGraphQLService.BuildResolveEfFieldContext<object>(context);

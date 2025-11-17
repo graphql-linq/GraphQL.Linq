@@ -9,7 +9,7 @@ namespace GraphQL.Linq;
 /// <summary>
 /// Maps <see cref="Connection{TNode}">Connection&lt;EfSource&lt;T&gt;&gt;</see> to <see cref="EfConnectionType{T}"/>.
 /// </summary>
-public class EfConnectionMapper : IGraphTypeMappingProvider
+public sealed class EfConnectionMapper : IGraphTypeMappingProvider
 {
     /// <inheritdoc/>
     public Type? GetGraphTypeFromClrType(Type clrType, bool isInputType, Type? preferredGraphType)
