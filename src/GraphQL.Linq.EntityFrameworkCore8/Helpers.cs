@@ -44,6 +44,9 @@ public static class Helpers
         //enable resolve field context accessor
         builder.AddResolveFieldContextAccessor();
 
+        //enable data loaders
+        builder.AddDataLoader();
+
         return builder;
     }
 }
