@@ -65,7 +65,7 @@ public static class Approvals
                 Received content written to: {receivedFile}
                 """);
 #else
-            // In local development, write the new content to the approval file
+            // In local development, write the new content to the approved file
             File.WriteAllText(approvedFile, normalizedReceived);
             return;
 #endif
