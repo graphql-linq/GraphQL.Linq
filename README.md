@@ -210,8 +210,6 @@ services.AddGraphQL(b => b
     .AddAutoClrMappings(true, false)
     // Register GraphQL.Linq with your DbContext
     .AddLinq<MyDbContext>()
-    // Required: Add data loader support for batching database queries
-    .AddDataLoader()
     // Required: Configure serial execution strategy for queries
     // This prevents threading issues with scoped services like DbContext
     .AddExecutionStrategy<SerialExecutionStrategy>(GraphQLParser.AST.OperationType.Query)
