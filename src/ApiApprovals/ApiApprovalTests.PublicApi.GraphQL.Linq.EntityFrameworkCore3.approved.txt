@@ -29,6 +29,7 @@ namespace GraphQL.Linq.EntityFrameworkCore3
     }
     public static class Helpers
     {
+        public static GraphQL.DI.IGraphQLBuilder AddLinq(this GraphQL.DI.IGraphQLBuilder builder) { }
         public static GraphQL.DI.IGraphQLBuilder AddLinq<TDbContext>(this GraphQL.DI.IGraphQLBuilder builder, System.Action<GraphQL.Linq.EntityFrameworkCore3.GraphQLLinqOptions<TDbContext>>? setupAction = null)
             where TDbContext : Microsoft.EntityFrameworkCore.DbContext { }
     }
