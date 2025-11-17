@@ -12,7 +12,7 @@ namespace GraphQL.Linq.EntityFrameworkCore10;
 public static class Helpers
 {
     /// <summary>
-    /// Adds GraphQL.Linq services for LinqToDB to the GraphQL builder.
+    /// Adds GraphQL.Linq services for Entity Framework Core to the GraphQL builder.
     /// </summary>
     public static IGraphQLBuilder AddLinq(this IGraphQLBuilder builder)
     {
