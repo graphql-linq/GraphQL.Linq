@@ -8,7 +8,7 @@ namespace GraphQL.Linq;
 /// An implementation of <see cref="IEfDbContextTypeProvider"/> that always returns a single DbContext type.
 /// </summary>
 /// <typeparam name="TDbContext">The DbContext type.</typeparam>
-public class EfDbSingleContextTypeProvider<TDbContext> : IEfDbContextTypeProvider
+public sealed class EfDbSingleContextTypeProvider<TDbContext> : IEfDbContextTypeProvider
 {
     /// <inheritdoc/>
     public Type? GetDbContextType(IQueryable queryable) => typeof(TDbContext);

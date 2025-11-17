@@ -55,7 +55,7 @@ public class EfEntityListDataLoader<TParentKey, TObject, TReturn>
         IQueryable<TObject> query,
         Expression<Func<TObject, TParentKey>> keySelector,
         Expression<Func<TObject, TReturn>> itemSelector)
-        : base(true, 900)
+        : base(false, 1000)
     {
         _query = query ?? throw new ArgumentNullException(nameof(query));
         _keySelector = keySelector ?? throw new ArgumentNullException(nameof(keySelector));

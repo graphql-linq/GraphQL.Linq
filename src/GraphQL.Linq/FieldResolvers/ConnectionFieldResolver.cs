@@ -10,7 +10,7 @@ namespace GraphQL.Linq.FieldResolvers;
 /// <summary>
 /// GraphQL <see cref="IFieldResolver"/> for EF connection fields.
 /// </summary>
-internal class ConnectionFieldResolver<TDbContext, TSourceType, TObjectType> : IFieldResolver where TSourceType : class where TObjectType : class
+internal sealed class ConnectionFieldResolver<TDbContext, TSourceType, TObjectType> : IFieldResolver where TSourceType : class where TObjectType : class
 {
     private readonly IEfConnectionResolver<TDbContext, TObjectType> _efConnectionResolver;
 
