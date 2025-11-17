@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "message": "Cannot specify both before and after",
+      "locations": [
+        {
+          "line": 2,
+          "column": 5
+        }
+      ],
+      "path": [
+        "productsConnection"
+      ]
+    }
+  ],
+  "data": null
+}

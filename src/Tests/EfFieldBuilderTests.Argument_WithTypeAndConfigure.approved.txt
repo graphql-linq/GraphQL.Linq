@@ -1,0 +1,7 @@
+{
+  "data": {
+    "product": {
+      "argumentWithTypeAndConfigure": "UltraBook Pro 15"
+    }
+  }
+}

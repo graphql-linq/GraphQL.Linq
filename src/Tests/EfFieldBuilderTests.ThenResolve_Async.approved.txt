@@ -1,0 +1,7 @@
+{
+  "data": {
+    "product": {
+      "thenResolveAsync": "ULTRABOOK PRO 15"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "data": {
+    "customers": {
+      "totalCount": 3,
+      "edges": [
+        {
+          "cursor": "0",
+          "node": {
+            "id": "1",
+            "fullName": "Jane Doe",
+            "email": "jane.doe@email.com",
+            "phoneNumber": "\u002B1-555-0123",
+            "createdAt": "2024-01-15T00:00:00\u002B00:00"
+          }
+        },
+        {
+          "cursor": "1",
+          "node": {
+            "id": "2",
+            "fullName": "Bob Smith",
+            "email": "bob.smith@email.com",
+            "phoneNumber": "\u002B1-555-0456",
+            "createdAt": "2024-02-20T00:00:00\u002B00:00"
+          }
+        },
+        {
+          "cursor": "2",
+          "node": {
+            "id": "3",
+            "fullName": "Alice Wong",
+            "email": "alice.wong@email.com",
+            "phoneNumber": null,
+            "createdAt": "2024-03-10T00:00:00\u002B00:00"
+          }
+        }
+      ],
+      "pageInfo": {
+        "startCursor": "0",
+        "endCursor": "2",
+        "hasPreviousPage": false,
+        "hasNextPage": false
+      }
+    }
+  }
+}

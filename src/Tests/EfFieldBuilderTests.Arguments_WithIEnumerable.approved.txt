@@ -1,0 +1,7 @@
+{
+  "data": {
+    "product": {
+      "argumentsWithIEnumerable": "UltraBook Pro 15"
+    }
+  }
+}

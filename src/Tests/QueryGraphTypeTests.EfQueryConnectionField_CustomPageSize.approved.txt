@@ -1,0 +1,24 @@
+{
+  "data": {
+    "productsConnectionCustomPageSize": {
+      "edges": [
+        {
+          "node": {
+            "id": 1,
+            "name": "UltraBook Pro 15"
+          }
+        },
+        {
+          "node": {
+            "id": 2,
+            "name": "Wireless Mouse"
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": true
+      },
+      "totalCount": 6
+    }
+  }
+}

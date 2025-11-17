@@ -1,0 +1,95 @@
+type Category {
+  id: Int!
+  name: String!
+}
+
+type Product {
+  argumentGenericClrType(filter: String!): String!
+  argumentGenericClrTypeNullable(filter: String): String!
+  argumentGenericClrTypeWithConfigure(
+    "Filter description"
+    filter: String!): String!
+  argumentGenericClrTypeWithDescription(
+    "Filter description"
+    filter: String!): String!
+  argumentGenericClrTypeWithDescriptionAndConfigure(
+    "Filter description"
+    filter: String! = "default"): String!
+  argumentGenericGraphType(filter: String): String!
+  argumentGenericGraphTypeWithConfigure(
+    "Filter description"
+    filter: String): String!
+  argumentGenericGraphTypeWithDescription(
+    "Filter description"
+    filter: String): String!
+  argumentGenericGraphTypeWithDescriptionAndConfigure(
+    "Filter description"
+    filter: String = "default"): String!
+  argumentsWithIEnumerable(filter1: String, filter2: Int): String!
+  argumentsWithParams(filter1: String, filter2: Int): String!
+  argumentWithIGraphType(filter: String): String!
+  argumentWithIGraphTypeAndConfigure(
+    "Filter description"
+    filter: String): String!
+  argumentWithType(filter: String): String!
+  argumentWithTypeAndConfigure(
+    "Filter description"
+    filter: String): String!
+  "A chained field"
+  chainedMethods(filter: String): String!
+  "Complex delayed load"
+  complexChainWithDelayLoad: User
+  "Price with markup"
+  complexChainWithThenResolve(
+    "Include currency symbol"
+    includeSymbol: Boolean,
+    "Markup percentage"
+    markup: Float): String!
+  createdByUserId: Int!
+  delayLoadEntryAsync: User!
+  delayLoadEntryBasic: User!
+  delayLoadEntryWithGraphType: User
+  delayLoadEntryWithProjection: User!
+  delayLoadEntryWithProjectionAndGraphType: User
+  delayLoadEntryWithProjectionAndGraphTypeAsync: User
+  delayLoadEntryWithProjectionAsync: User!
+  delayLoadListAsync: [ProductCategory!]!
+  delayLoadListBasic: [ProductCategory!]!
+  delayLoadListWithGraphType: [ProductCategory]!
+  delayLoadListWithProjection: [Category!]!
+  delayLoadListWithProjectionAndGraphType: [Category]!
+  delayLoadListWithProjectionAndGraphTypeAsync: [Category]!
+  delayLoadListWithProjectionAsync: [Category!]!
+  fieldWithConfigure: String!
+  fieldWithDeprecation: String! @deprecated(reason: "This field is deprecated")
+  "This is a field description"
+  fieldWithDescription: String!
+  fieldWithNullDeprecation: String!
+  fieldWithNullDescription: String!
+  id: Int!
+  name: String!
+  thenResolveAsync: String!
+  thenResolveAsyncNullable: String
+  thenResolveAsyncWithGraphType: Int
+  thenResolveSimple: String!
+  thenResolveSimpleNullable: String
+  thenResolveSimpleWithGraphType: Int
+  thenResolveWithContext(prefix: String): String!
+  thenResolveWithContextAndGraphType: Int
+  thenResolveWithContextNullable: String
+}
+
+type ProductCategory {
+  categoryId: Int!
+  productId: Int!
+}
+
+type Query {
+  product(id: ID!): Product!
+}
+
+type User {
+  email: String!
+  id: Int!
+  username: String!
+}

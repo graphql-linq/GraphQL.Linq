@@ -1,0 +1,23 @@
+{
+  "errors": [
+    {
+      "message": "Cannot return null for a non-null type. Field: productDelayedWithProjection, Type: Product!.",
+      "locations": [
+        {
+          "line": 2,
+          "column": 5
+        }
+      ],
+      "path": [
+        "productDelayedWithProjection"
+      ],
+      "extensions": {
+        "code": "INVALID_OPERATION",
+        "codes": [
+          "INVALID_OPERATION"
+        ]
+      }
+    }
+  ],
+  "data": null
+}

@@ -1,0 +1,20 @@
+{
+  "data": {
+    "orderItemsByOrderIdWithProjection": [
+      {
+        "id": 3,
+        "orderId": 2,
+        "productId": 2,
+        "quantity": 2,
+        "unitPrice": 29.99
+      },
+      {
+        "id": 4,
+        "orderId": 2,
+        "productId": 3,
+        "quantity": 1,
+        "unitPrice": 49.99
+      }
+    ]
+  }
+}

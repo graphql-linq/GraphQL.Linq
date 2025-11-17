@@ -1,0 +1,46 @@
+<Project>
+
+  <PropertyGroup Label="Сommon properties">
+    <!-- Set version and default properties -->
+    <VersionPrefix>11.0.0-preview</VersionPrefix>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Set common NuGet package properties -->
+    <Authors>Shane Krueger</Authors>
+    <Copyright>Copyright © 2025 American Community Developers, Inc. All rights reserved.</Copyright>
+    <PackageTags>EntityFrameworkCore, EntityFramework, LINQ, Linq2DB, GraphQL</PackageTags>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageIcon>logo.64x64.png</PackageIcon>
+    <RepositoryType>Git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <!-- Set misc build properties -->
+    <DebugType>embedded</DebugType>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <SignAssembly>false</SignAssembly>
+    <Deterministic>true</Deterministic>
+
+    <!-- Enable analyzers; treat all warnings as errors; disable 'using directive is unnecessary' and throw helper warnings -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <NoWarn>$(NoWarn);IDE0005;CA1510</NoWarn>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <AnalysisLevel>10-recommended</AnalysisLevel>
+
+    <!-- Configure only direct NuGet auditing mode -->
+    <NuGetAuditMode>direct</NuGetAuditMode>
+  </PropertyGroup>
+
+  <!-- Include README for packable projects -->
+  <ItemGroup Condition="'$(IsPackable)' == 'true'">
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)LICENSE.txt" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)logo.64x64.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

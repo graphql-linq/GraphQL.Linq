@@ -1,0 +1,17 @@
+{
+  "data": {
+    "product": {
+      "orderItems": {
+        "edges": [
+          {
+            "node": {
+              "orderId": 1,
+              "productId": 1
+            }
+          }
+        ],
+        "totalCount": 1
+      }
+    }
+  }
+}

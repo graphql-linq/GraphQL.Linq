@@ -1,0 +1,9 @@
+{
+  "data": {
+    "product": {
+      "orderItems": {
+        "__typename": "OrderItemConnection"
+      }
+    }
+  }
+}

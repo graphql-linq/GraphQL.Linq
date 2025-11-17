@@ -1,0 +1,10 @@
+{
+  "data": {
+    "product": {
+      "id": "1",
+      "name": "UltraBook Pro 15",
+      "price": 1299.99,
+      "description": "High-performance laptop with 16GB RAM and 512GB SSD"
+    }
+  }
+}

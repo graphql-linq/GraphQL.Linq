@@ -1,0 +1,18 @@
+{
+  "data": {
+    "orderItemsByOrderId": [
+      {
+        "id": 1,
+        "orderId": 1,
+        "productId": 1,
+        "quantity": 1
+      },
+      {
+        "id": 2,
+        "orderId": 1,
+        "productId": 3,
+        "quantity": 1
+      }
+    ]
+  }
+}

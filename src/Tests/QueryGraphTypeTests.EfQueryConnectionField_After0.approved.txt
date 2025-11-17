@@ -1,0 +1,50 @@
+{
+  "data": {
+    "productsConnection": {
+      "edges": [
+        {
+          "node": {
+            "id": 2,
+            "name": "Wireless Mouse"
+          },
+          "cursor": "1"
+        },
+        {
+          "node": {
+            "id": 3,
+            "name": "USB-C Hub"
+          },
+          "cursor": "2"
+        },
+        {
+          "node": {
+            "id": 4,
+            "name": "Mechanical Keyboard"
+          },
+          "cursor": "3"
+        },
+        {
+          "node": {
+            "id": 5,
+            "name": "4K Monitor"
+          },
+          "cursor": "4"
+        },
+        {
+          "node": {
+            "id": 6,
+            "name": "Generic Cable"
+          },
+          "cursor": "5"
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": false,
+        "hasPreviousPage": true,
+        "startCursor": "1",
+        "endCursor": "5"
+      },
+      "totalCount": 6
+    }
+  }
+}

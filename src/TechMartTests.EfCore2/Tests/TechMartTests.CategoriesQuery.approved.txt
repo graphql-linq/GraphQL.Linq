@@ -1,0 +1,51 @@
+{
+  "data": {
+    "categories": {
+      "totalCount": 4,
+      "edges": [
+        {
+          "cursor": "0",
+          "node": {
+            "id": "3",
+            "name": "Accessories",
+            "description": "Computer accessories and peripherals",
+            "isActive": true
+          }
+        },
+        {
+          "cursor": "1",
+          "node": {
+            "id": "2",
+            "name": "Computers",
+            "description": "Desktop and laptop computers",
+            "isActive": true
+          }
+        },
+        {
+          "cursor": "2",
+          "node": {
+            "id": "1",
+            "name": "Electronics",
+            "description": "Electronic devices and accessories",
+            "isActive": true
+          }
+        },
+        {
+          "cursor": "3",
+          "node": {
+            "id": "4",
+            "name": "Gaming",
+            "description": "Gaming hardware and accessories",
+            "isActive": true
+          }
+        }
+      ],
+      "pageInfo": {
+        "startCursor": "0",
+        "endCursor": "3",
+        "hasPreviousPage": false,
+        "hasNextPage": false
+      }
+    }
+  }
+}

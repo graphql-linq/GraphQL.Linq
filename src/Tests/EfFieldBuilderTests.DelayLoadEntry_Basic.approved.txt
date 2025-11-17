@@ -1,0 +1,10 @@
+{
+  "data": {
+    "product": {
+      "delayLoadEntryBasic": {
+        "id": 1,
+        "username": "admin"
+      }
+    }
+  }
+}

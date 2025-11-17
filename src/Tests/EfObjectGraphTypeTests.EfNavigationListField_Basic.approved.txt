@@ -1,0 +1,16 @@
+{
+  "data": {
+    "product": {
+      "productCategories": [
+        {
+          "productId": 1,
+          "categoryId": 1
+        },
+        {
+          "productId": 1,
+          "categoryId": 2
+        }
+      ]
+    }
+  }
+}

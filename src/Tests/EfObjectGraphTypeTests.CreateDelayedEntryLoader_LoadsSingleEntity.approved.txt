@@ -1,0 +1,10 @@
+{
+  "data": {
+    "product": {
+      "delayLoadedCreator": {
+        "id": 1,
+        "username": "admin"
+      }
+    }
+  }
+}

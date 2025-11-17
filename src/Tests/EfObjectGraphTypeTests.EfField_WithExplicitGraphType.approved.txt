@@ -1,0 +1,7 @@
+{
+  "data": {
+    "product": {
+      "priceAsFloat": 1299.99
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "data": {
+    "productsConnection": {
+      "items": [
+        {
+          "id": 1,
+          "name": "UltraBook Pro 15"
+        },
+        {
+          "id": 2,
+          "name": "Wireless Mouse"
+        },
+        {
+          "id": 3,
+          "name": "USB-C Hub"
+        }
+      ]
+    }
+  }
+}

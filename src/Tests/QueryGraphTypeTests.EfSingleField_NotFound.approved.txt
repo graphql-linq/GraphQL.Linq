@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "message": "Source sequence doesn\u0027t contain any elements.",
+      "locations": [
+        {
+          "line": 2,
+          "column": 5
+        }
+      ],
+      "path": [
+        "product"
+      ]
+    }
+  ],
+  "data": null
+}

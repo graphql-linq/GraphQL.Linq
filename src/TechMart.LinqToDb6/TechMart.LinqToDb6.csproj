@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GraphQL.Server.Ui.GraphiQL" Version="8.*" />
+    <PackageReference Include="linq2db.EntityFrameworkCore" Version="8.2.0-rc.3" />
+    <PackageReference Include="Shane32.GraphQL.DI" Version="8.*" />
+    <PackageReference Include="GraphQL.SystemTextJson" Version="8.*" />
+    <PackageReference Include="GraphQL.DataLoader" Version="8.*" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="8.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GraphQL.Linq.LinqToDb6\GraphQL.Linq.LinqToDb6.csproj" />
+    <ProjectReference Include="..\TechMartDb.EfCore8\TechMartDb.EfCore8.csproj" />
+    <ProjectReference Include="..\DbHelpers\DbHelpers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Remove="Microsoft.Extensions.Hosting" />
+    <Using Remove="System.Net.Http.Json" />
+    <Using Include="GraphQL.Linq" />
+    <Using Include="GraphQL.Linq.LinqToDb6" />
+    <Using Include="LinqToDB.IDataContext" Alias="TechMartDbContext" />
+    <Using Include="TechMartDb.Models" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\TechMart.EfCore2\Graphs\*.cs" Link="Graphs\%(RecursiveDir)%(Filename)%(Extension)" />
+    <Compile Include="..\TechMart.LinqToDb5\*.cs" />
+  </ItemGroup>
+
+</Project>

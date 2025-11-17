@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "message": "Last must not be negative",
+      "locations": [
+        {
+          "line": 2,
+          "column": 5
+        }
+      ],
+      "path": [
+        "productsConnection"
+      ]
+    }
+  ],
+  "data": null
+}

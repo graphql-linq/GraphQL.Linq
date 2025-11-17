@@ -1,0 +1,8 @@
+{
+  "data": {
+    "productDelayed": {
+      "id": 1,
+      "name": "UltraBook Pro 15"
+    }
+  }
+}

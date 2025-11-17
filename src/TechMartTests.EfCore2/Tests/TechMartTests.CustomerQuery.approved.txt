@@ -1,0 +1,12 @@
+{
+  "data": {
+    "customer": {
+      "id": "1",
+      "fullName": "Jane Doe",
+      "email": "jane.doe@email.com",
+      "phoneNumber": "\u002B1-555-0123",
+      "createdAt": "2024-01-15T00:00:00\u002B00:00",
+      "loyaltyPoints": 1250
+    }
+  }
+}

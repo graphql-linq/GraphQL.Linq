@@ -1,0 +1,9 @@
+{
+  "data": {
+    "productWithPredicate": {
+      "id": 2,
+      "name": "Wireless Mouse",
+      "price": 29.99
+    }
+  }
+}

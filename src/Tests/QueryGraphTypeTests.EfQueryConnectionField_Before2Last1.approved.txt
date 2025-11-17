@@ -1,0 +1,22 @@
+{
+  "data": {
+    "productsConnection": {
+      "edges": [
+        {
+          "node": {
+            "id": 2,
+            "name": "Wireless Mouse"
+          },
+          "cursor": "1"
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+        "startCursor": "1",
+        "endCursor": "1"
+      },
+      "totalCount": 6
+    }
+  }
+}

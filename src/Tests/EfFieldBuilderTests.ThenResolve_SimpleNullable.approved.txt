@@ -1,0 +1,7 @@
+{
+  "data": {
+    "product": {
+      "thenResolveSimpleNullable": "HIGH-PERFORMANCE LAPTOP WITH 16GB RAM AND 512GB SSD"
+    }
+  }
+}

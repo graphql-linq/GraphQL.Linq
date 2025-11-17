@@ -1,0 +1,10 @@
+{
+  "data": {
+    "product": {
+      "delayLoadEntryWithProjection": {
+        "id": 1,
+        "username": "admin"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "data": {
+    "product": {
+      "categoriesWithResolverNoName": {
+        "edges": [
+          {
+            "node": {
+              "orderId": 1,
+              "productId": 1
+            }
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    }
+  }
+}

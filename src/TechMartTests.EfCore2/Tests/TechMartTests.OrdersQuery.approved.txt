@@ -1,0 +1,132 @@
+{
+  "data": {
+    "orders": {
+      "totalCount": 4,
+      "edges": [
+        {
+          "cursor": "0",
+          "node": {
+            "id": "4",
+            "orderNumber": "ORD-2024-00004",
+            "orderDate": "2024-03-15T14:00:00\u002B00:00",
+            "shippedDate": null,
+            "total": 399.99,
+            "orderStatus": "PENDING",
+            "customerId": "3",
+            "customer": {
+              "id": "3",
+              "fullName": "Alice Wong",
+              "email": "alice.wong@email.com"
+            },
+            "orderItems": [
+              {
+                "id": "7",
+                "quantity": 1,
+                "unitPrice": 399.99,
+                "total": 399.99,
+                "productId": "5",
+                "product": {
+                  "id": "5",
+                  "name": "4K Monitor",
+                  "price": 399.99
+                }
+              }
+            ]
+          }
+        },
+        {
+          "cursor": "1",
+          "node": {
+            "id": "3",
+            "orderNumber": "ORD-2024-00003",
+            "orderDate": "2024-03-10T11:20:00\u002B00:00",
+            "shippedDate": null,
+            "total": 549.98,
+            "orderStatus": "PROCESSING",
+            "customerId": "1",
+            "customer": {
+              "id": "1",
+              "fullName": "Jane Doe",
+              "email": "jane.doe@email.com"
+            },
+            "orderItems": [
+              {
+                "id": "5",
+                "quantity": 1,
+                "unitPrice": 149.99,
+                "total": 149.99,
+                "productId": "4",
+                "product": {
+                  "id": "4",
+                  "name": "Mechanical Keyboard",
+                  "price": 149.99
+                }
+              },
+              {
+                "id": "6",
+                "quantity": 1,
+                "unitPrice": 399.99,
+                "total": 399.99,
+                "productId": "5",
+                "product": {
+                  "id": "5",
+                  "name": "4K Monitor",
+                  "price": 399.99
+                }
+              }
+            ]
+          }
+        },
+        {
+          "cursor": "2",
+          "node": {
+            "id": "2",
+            "orderNumber": "ORD-2024-00002",
+            "orderDate": "2024-02-20T15:45:00\u002B00:00",
+            "shippedDate": "2024-02-21T09:30:00\u002B00:00",
+            "total": 109.97,
+            "orderStatus": "SHIPPED",
+            "customerId": "2",
+            "customer": {
+              "id": "2",
+              "fullName": "Bob Smith",
+              "email": "bob.smith@email.com"
+            },
+            "orderItems": [
+              {
+                "id": "3",
+                "quantity": 2,
+                "unitPrice": 29.99,
+                "total": 59.98,
+                "productId": "2",
+                "product": {
+                  "id": "2",
+                  "name": "Wireless Mouse",
+                  "price": 29.99
+                }
+              },
+              {
+                "id": "4",
+                "quantity": 1,
+                "unitPrice": 49.99,
+                "total": 49.99,
+                "productId": "3",
+                "product": {
+                  "id": "3",
+                  "name": "USB-C Hub",
+                  "price": 49.99
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "pageInfo": {
+        "startCursor": "0",
+        "endCursor": "2",
+        "hasPreviousPage": false,
+        "hasNextPage": true
+      }
+    }
+  }
+}

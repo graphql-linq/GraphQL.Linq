@@ -1,0 +1,35 @@
+namespace GraphQL.Linq.EntityFrameworkCore6
+{
+    public sealed class EfDbContextTypeProvider : GraphQL.Linq.GraphApi.IEfDbContextTypeProvider
+    {
+        public EfDbContextTypeProvider() { }
+        public System.Type? GetDbContextType(System.Linq.IQueryable queryable) { }
+    }
+    public sealed class EfDbPrimaryKeyNamesProvider<TDbContext> : GraphQL.Linq.GraphApi.IEfDbPrimaryKeyNamesProvider<TDbContext>
+        where TDbContext : Microsoft.EntityFrameworkCore.DbContext
+    {
+        public EfDbPrimaryKeyNamesProvider(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory serviceScopeFactory) { }
+        public System.Linq.Expressions.Expression<System.Func<TSource, object>> GetDummyExpression<TSource>() { }
+        public System.Collections.Generic.IEnumerable<string> GetPrimaryKeyNames<TSource>() { }
+    }
+    public class EfGraphQLService<TDbContext> : GraphQL.Linq.EfGraphQLServiceBase<TDbContext>
+        where TDbContext : Microsoft.EntityFrameworkCore.DbContext
+    {
+        public EfGraphQLService(GraphQL.Linq.GraphApi.IEfDbPrimaryKeyNamesProvider<TDbContext> efDbKeyNames) { }
+        public override System.Threading.Tasks.Task<int> QueryCountAsync<TReturn>(System.Linq.IQueryable<TReturn> query, System.Threading.CancellationToken cancellationToken = default) { }
+        public override System.Threading.Tasks.Task<TReturn?> QuerySingleOrDefaultAsync<TReturn>(System.Linq.IQueryable<TReturn> query, System.Threading.CancellationToken cancellationToken = default)
+            where TReturn :  class { }
+        public override System.Threading.Tasks.Task<System.Collections.Generic.IList<TReturn>> QueryToListAsync<TReturn>(System.Linq.IQueryable<TReturn> query, System.Threading.CancellationToken cancellationToken = default)
+            where TReturn :  class { }
+    }
+    public class GraphQLLinqOptions<TDbContext>
+        where TDbContext : Microsoft.EntityFrameworkCore.DbContext
+    {
+        public GraphQLLinqOptions() { }
+    }
+    public static class Helpers
+    {
+        public static GraphQL.DI.IGraphQLBuilder AddLinq<TDbContext>(this GraphQL.DI.IGraphQLBuilder builder, System.Action<GraphQL.Linq.EntityFrameworkCore6.GraphQLLinqOptions<TDbContext>>? setupAction = null)
+            where TDbContext : Microsoft.EntityFrameworkCore.DbContext { }
+    }
+}

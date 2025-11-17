@@ -1,0 +1,25 @@
+{
+  "data": {
+    "product": {
+      "id": "1",
+      "name": "UltraBook Pro 15",
+      "description": "High-performance laptop with 16GB RAM and 512GB SSD",
+      "price": 1299.99,
+      "stockQuantity": 45,
+      "categories": [
+        {
+          "id": "1",
+          "name": "Electronics",
+          "description": "Electronic devices and accessories",
+          "isActive": true
+        },
+        {
+          "id": "2",
+          "name": "Computers",
+          "description": "Desktop and laptop computers",
+          "isActive": true
+        }
+      ]
+    }
+  }
+}

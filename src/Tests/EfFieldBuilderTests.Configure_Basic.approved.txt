@@ -1,0 +1,7 @@
+{
+  "data": {
+    "product": {
+      "fieldWithConfigure": "UltraBook Pro 15"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "data": {
+    "product": {
+      "withFilter": "UltraBook Pro 15 - filtered",
+      "withoutFilter": "UltraBook Pro 15"
+    }
+  }
+}

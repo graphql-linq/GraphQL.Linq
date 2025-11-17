@@ -1,0 +1,23 @@
+{
+  "data": {
+    "product": {
+      "categoriesConnectionProjected": {
+        "edges": [
+          {
+            "node": {
+              "id": 1,
+              "name": "Electronics"
+            }
+          },
+          {
+            "node": {
+              "id": 2,
+              "name": "Computers"
+            }
+          }
+        ],
+        "totalCount": 2
+      }
+    }
+  }
+}

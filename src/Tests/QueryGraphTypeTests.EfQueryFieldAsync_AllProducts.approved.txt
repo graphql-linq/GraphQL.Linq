@@ -1,0 +1,36 @@
+{
+  "data": {
+    "productsAsync": [
+      {
+        "id": 1,
+        "name": "UltraBook Pro 15",
+        "price": 1299.99
+      },
+      {
+        "id": 2,
+        "name": "Wireless Mouse",
+        "price": 29.99
+      },
+      {
+        "id": 3,
+        "name": "USB-C Hub",
+        "price": 49.99
+      },
+      {
+        "id": 4,
+        "name": "Mechanical Keyboard",
+        "price": 149.99
+      },
+      {
+        "id": 5,
+        "name": "4K Monitor",
+        "price": 399.99
+      },
+      {
+        "id": 6,
+        "name": "Generic Cable",
+        "price": 9.99
+      }
+    ]
+  }
+}

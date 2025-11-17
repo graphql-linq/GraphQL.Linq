@@ -1,0 +1,45 @@
+{
+  "data": {
+    "users": {
+      "totalCount": 3,
+      "edges": [
+        {
+          "cursor": "0",
+          "node": {
+            "id": "1",
+            "username": "admin",
+            "email": "admin@techmart.com",
+            "role": "ADMIN",
+            "isActive": true
+          }
+        },
+        {
+          "cursor": "1",
+          "node": {
+            "id": "2",
+            "username": "jsmith",
+            "email": "john.smith@techmart.com",
+            "role": "SALES",
+            "isActive": true
+          }
+        },
+        {
+          "cursor": "2",
+          "node": {
+            "id": "3",
+            "username": "mjones",
+            "email": "mary.jones@techmart.com",
+            "role": "MANAGER",
+            "isActive": true
+          }
+        }
+      ],
+      "pageInfo": {
+        "startCursor": "0",
+        "endCursor": "2",
+        "hasPreviousPage": false,
+        "hasNextPage": false
+      }
+    }
+  }
+}

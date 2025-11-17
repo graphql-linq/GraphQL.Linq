@@ -1,0 +1,44 @@
+{
+  "data": {
+    "order": {
+      "id": "1",
+      "orderNumber": "ORD-2024-00001",
+      "orderDate": "2024-01-15T10:30:00\u002B00:00",
+      "shippedDate": "2024-01-16T14:00:00\u002B00:00",
+      "total": 1349.98,
+      "orderStatus": "DELIVERED",
+      "customerId": "1",
+      "customer": {
+        "id": "1",
+        "fullName": "Jane Doe",
+        "email": "jane.doe@email.com"
+      },
+      "orderItems": [
+        {
+          "id": "1",
+          "quantity": 1,
+          "unitPrice": 1299.99,
+          "total": 1299.99,
+          "productId": "1",
+          "product": {
+            "id": "1",
+            "name": "UltraBook Pro 15",
+            "price": 1299.99
+          }
+        },
+        {
+          "id": "2",
+          "quantity": 1,
+          "unitPrice": 49.99,
+          "total": 49.99,
+          "productId": "3",
+          "product": {
+            "id": "3",
+            "name": "USB-C Hub",
+            "price": 49.99
+          }
+        }
+      ]
+    }
+  }
+}

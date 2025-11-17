@@ -1,0 +1,292 @@
+"Represents a product category in the TechMart catalog."
+type Category {
+  "The description of the category."
+  description: String
+  "The unique identifier of the category."
+  id: ID!
+  "Indicates whether the category is active and visible."
+  isActive: Boolean!
+  "The name of the category."
+  name: String!
+}
+
+"A connection from an object to a list of objects of type 'Category'."
+type CategoryConnection {
+  "A list of all of the edges returned in the connection."
+  edges: [CategoryEdge!]!
+  "A list of all of the objects returned in the connection. This is a convenience field provided for quickly exploring the API; rather than querying for \"{ edges { node } }\" when no edge data is needed, this field can be used instead. Note that when clients like Relay need to fetch the \"cursor\" field on the edge to enable efficient pagination, this shortcut cannot be used, and the full \"{ edges { node } } \" version should be used instead."
+  items: [Category!]!
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A count of the total number of objects in this connection, ignoring pagination. This allows a client to fetch the first five objects by passing \"5\" as the argument to `first`, then fetch the total count so it could display \"5 of 83\", for example. In cases where we employ infinite scrolling or don't have an exact count of entries, this field will return `null`."
+  totalCount: Int!
+}
+
+"An edge in a connection from an object to another object of type 'Category'."
+type CategoryEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: Category!
+}
+
+"Represents a customer in the TechMart system."
+type Customer {
+  "The date and time when the customer account was created."
+  createdAt: DateTimeOffset!
+  "The email address of the customer."
+  email: String!
+  "The full name of the customer."
+  fullName: String!
+  "The unique identifier of the customer."
+  id: ID!
+  "The accumulated loyalty points of the customer."
+  loyaltyPoints: Int!
+  "The phone number of the customer."
+  phoneNumber: String
+}
+
+"A connection from an object to a list of objects of type 'Customer'."
+type CustomerConnection {
+  "A list of all of the edges returned in the connection."
+  edges: [CustomerEdge!]!
+  "A list of all of the objects returned in the connection. This is a convenience field provided for quickly exploring the API; rather than querying for \"{ edges { node } }\" when no edge data is needed, this field can be used instead. Note that when clients like Relay need to fetch the \"cursor\" field on the edge to enable efficient pagination, this shortcut cannot be used, and the full \"{ edges { node } } \" version should be used instead."
+  items: [Customer!]!
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A count of the total number of objects in this connection, ignoring pagination. This allows a client to fetch the first five objects by passing \"5\" as the argument to `first`, then fetch the total count so it could display \"5 of 83\", for example. In cases where we employ infinite scrolling or don't have an exact count of entries, this field will return `null`."
+  totalCount: Int!
+}
+
+"An edge in a connection from an object to another object of type 'Customer'."
+type CustomerEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: Customer!
+}
+
+"Specifies the ordering options for customer queries."
+enum CustomersOrderBy {
+  "Order by creation date in ascending order."
+  CREATED_AT_ASC
+  "Order by creation date in descending order."
+  CREATED_AT_DESC
+  "Order by email in ascending order."
+  EMAIL_ASC
+  "Order by email in descending order."
+  EMAIL_DESC
+  "Order by ID in ascending order."
+  ID_ASC
+  "Order by ID in descending order."
+  ID_DESC
+  "Order by full name in ascending order."
+  NAME_ASC
+  "Order by full name in descending order."
+  NAME_DESC
+}
+
+"The `DateTimeOffset` scalar type represents a date, time and offset from UTC. `DateTimeOffset` expects timestamps to be formatted in accordance with the [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard."
+scalar DateTimeOffset
+
+scalar Decimal
+
+type Mutation {
+  dummy: String!
+}
+
+"Represents a customer order in the TechMart system."
+type Order {
+  "The customer who placed the order."
+  customer: Customer!
+  "The ID of the customer who placed the order."
+  customerId: ID!
+  "The unique identifier of the order."
+  id: ID!
+  "The date and time when the order was placed."
+  orderDate: DateTimeOffset!
+  "The items included in the order."
+  orderItems: [OrderItem!]!
+  "The human-readable order number."
+  orderNumber: String!
+  "The current status of the order."
+  orderStatus: OrderStatus!
+  "The date and time when the order was shipped."
+  shippedDate: DateTimeOffset
+  "The total amount for the order."
+  total: Decimal!
+}
+
+"A connection from an object to a list of objects of type 'Order'."
+type OrderConnection {
+  "A list of all of the edges returned in the connection."
+  edges: [OrderEdge!]!
+  "A list of all of the objects returned in the connection. This is a convenience field provided for quickly exploring the API; rather than querying for \"{ edges { node } }\" when no edge data is needed, this field can be used instead. Note that when clients like Relay need to fetch the \"cursor\" field on the edge to enable efficient pagination, this shortcut cannot be used, and the full \"{ edges { node } } \" version should be used instead."
+  items: [Order!]!
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A count of the total number of objects in this connection, ignoring pagination. This allows a client to fetch the first five objects by passing \"5\" as the argument to `first`, then fetch the total count so it could display \"5 of 83\", for example. In cases where we employ infinite scrolling or don't have an exact count of entries, this field will return `null`."
+  totalCount: Int!
+}
+
+"An edge in a connection from an object to another object of type 'Order'."
+type OrderEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: Order!
+}
+
+"Represents an individual item within an order."
+type OrderItem {
+  "The unique identifier of the order item."
+  id: ID!
+  "The ID of the parent order."
+  orderId: ID!
+  "The product associated with this order item."
+  product: Product!
+  "The ID of the product ordered."
+  productId: ID!
+  "The quantity of the product ordered."
+  quantity: Int!
+  "The total price for this order item (Quantity * UnitPrice)."
+  total: Decimal!
+  "The price per unit at the time of order (snapshot)."
+  unitPrice: Decimal!
+}
+
+enum OrderStatus {
+  CANCELLED
+  DELIVERED
+  PENDING
+  PROCESSING
+  SHIPPED
+}
+
+"Information about pagination in a connection."
+type PageInfo {
+  "When paginating forwards, the cursor to continue."
+  endCursor: String
+  "When paginating forwards, are there more items?"
+  hasNextPage: Boolean!
+  "When paginating backwards, are there more items?"
+  hasPreviousPage: Boolean!
+  "When paginating backwards, the cursor to continue."
+  startCursor: String
+}
+
+"Represents a product in the TechMart catalog."
+type Product {
+  "The category to which the product belongs."
+  categories: [Category!]!
+  "The description of the product."
+  description: String
+  "The unique identifier of the product."
+  id: ID!
+  "The name of the product."
+  name: String!
+  "The price of the product."
+  price: Decimal!
+  "The available stock quantity of the product."
+  stockQuantity: Int!
+}
+
+"A connection from an object to a list of objects of type 'Product'."
+type ProductConnection {
+  "A list of all of the edges returned in the connection."
+  edges: [ProductEdge!]!
+  "A list of all of the objects returned in the connection. This is a convenience field provided for quickly exploring the API; rather than querying for \"{ edges { node } }\" when no edge data is needed, this field can be used instead. Note that when clients like Relay need to fetch the \"cursor\" field on the edge to enable efficient pagination, this shortcut cannot be used, and the full \"{ edges { node } } \" version should be used instead."
+  items: [Product!]!
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A count of the total number of objects in this connection, ignoring pagination. This allows a client to fetch the first five objects by passing \"5\" as the argument to `first`, then fetch the total count so it could display \"5 of 83\", for example. In cases where we employ infinite scrolling or don't have an exact count of entries, this field will return `null`."
+  totalCount: Int!
+}
+
+"An edge in a connection from an object to another object of type 'Product'."
+type ProductEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: Product!
+}
+
+"Specifies the ordering options for product queries."
+enum ProductsOrderBy {
+  "Order by ID in ascending order."
+  ID_ASC
+  "Order by ID in descending order."
+  ID_DESC
+  "Order by name in ascending order."
+  NAME_ASC
+  "Order by name in descending order."
+  NAME_DESC
+  "Order by price in ascending order."
+  PRICE_ASC
+  "Order by price in descending order."
+  PRICE_DESC
+}
+
+type Query {
+  "Retrieves a paginated list of active categories with optional filtering by IDs and search text."
+  categories(after: ID, before: ID, first: Int, ids: [ID!], last: Int, search: String): CategoryConnection!
+  "Retrieves a single category by its unique identifier."
+  category(id: ID!): Category!
+  "Retrieves a single customer by their unique identifier."
+  customer(id: ID!): Customer!
+  "Retrieves a paginated list of customers with optional filtering by IDs, search text, and custom ordering."
+  customers(after: ID, before: ID, first: Int, ids: [ID!], last: Int, orderBy: CustomersOrderBy! = ID_ASC, search: String): CustomerConnection!
+  "Retrieves a single order by its unique identifier."
+  order(id: ID!): Order!
+  "Retrieves a paginated list of orders with optional filtering by IDs, order number, customer ID, and order statuses."
+  orders(after: ID, before: ID, customerId: ID, first: Int, ids: [ID!], last: Int, orderNumber: String, statuses: [OrderStatus!]): OrderConnection!
+  "Retrieves a single product by its unique identifier."
+  product(id: ID!): Product!
+  "Retrieves a paginated list of products with optional filtering by IDs, search text, category IDs, and custom ordering."
+  products(after: ID, before: ID, categoryIds: [ID!], first: Int, ids: [ID!], last: Int, orderBy: ProductsOrderBy! = ID_ASC, search: String): ProductConnection!
+  "Retrieves a single user by their unique identifier."
+  user(id: ID!): User!
+  "Retrieves a paginated list of active users with optional filtering by IDs, search text, and user roles."
+  users(after: ID, before: ID, first: Int, ids: [ID!], last: Int, roles: [UserRole!], search: String): UserConnection!
+}
+
+"Represents a user (employee/staff) in the TechMart system."
+type User {
+  "The email address of the user."
+  email: String!
+  "The unique identifier of the user."
+  id: ID!
+  "Indicates whether the user account is active."
+  isActive: Boolean!
+  "The role of the user (Admin, Manager, Sales, Support)."
+  role: UserRole!
+  "The username for login."
+  username: String!
+}
+
+"A connection from an object to a list of objects of type 'User'."
+type UserConnection {
+  "A list of all of the edges returned in the connection."
+  edges: [UserEdge!]!
+  "A list of all of the objects returned in the connection. This is a convenience field provided for quickly exploring the API; rather than querying for \"{ edges { node } }\" when no edge data is needed, this field can be used instead. Note that when clients like Relay need to fetch the \"cursor\" field on the edge to enable efficient pagination, this shortcut cannot be used, and the full \"{ edges { node } } \" version should be used instead."
+  items: [User!]!
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A count of the total number of objects in this connection, ignoring pagination. This allows a client to fetch the first five objects by passing \"5\" as the argument to `first`, then fetch the total count so it could display \"5 of 83\", for example. In cases where we employ infinite scrolling or don't have an exact count of entries, this field will return `null`."
+  totalCount: Int!
+}
+
+"An edge in a connection from an object to another object of type 'User'."
+type UserEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: User!
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
+  SALES
+  SUPPORT
+}

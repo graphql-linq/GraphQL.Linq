@@ -1,0 +1,10 @@
+{
+  "data": {
+    "product": {
+      "createdBy": {
+        "id": 1,
+        "username": "admin"
+      }
+    }
+  }
+}

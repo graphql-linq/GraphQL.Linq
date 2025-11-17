@@ -1,0 +1,9 @@
+{
+  "data": {
+    "productNullableDelayedWithProjection": {
+      "id": 3,
+      "name": "USB-C Hub",
+      "price": 49.99
+    }
+  }
+}

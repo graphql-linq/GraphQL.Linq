@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "message": "Cannot select both edges and items",
+      "locations": [
+        {
+          "line": 2,
+          "column": 5
+        }
+      ],
+      "path": [
+        "productsConnection"
+      ]
+    }
+  ],
+  "data": null
+}

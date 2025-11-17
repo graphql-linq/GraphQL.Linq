@@ -1,0 +1,37 @@
+{
+  "data": {
+    "productsConnectionFiltered": {
+      "edges": [
+        {
+          "node": {
+            "id": 2,
+            "name": "Wireless Mouse",
+            "stockQuantity": 150
+          }
+        },
+        {
+          "node": {
+            "id": 3,
+            "name": "USB-C Hub",
+            "stockQuantity": 80
+          }
+        },
+        {
+          "node": {
+            "id": 4,
+            "name": "Mechanical Keyboard",
+            "stockQuantity": 60
+          }
+        },
+        {
+          "node": {
+            "id": 6,
+            "name": "Generic Cable",
+            "stockQuantity": 200
+          }
+        }
+      ],
+      "totalCount": 4
+    }
+  }
+}

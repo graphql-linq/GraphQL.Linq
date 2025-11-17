@@ -1,0 +1,140 @@
+===============================================================================
+GraphQL.Linq
+Copyright © 2025 American Community Developers, Inc. All rights reserved.
+===============================================================================
+
+This software is distributed under a tiered licensing model consisting of
+separate license types, each defining distinct rights and obligations. A user or
+organization may hold one or more licenses depending on qualification or
+agreement. Users must ensure compliance with the terms of every license under
+which they operate.
+
+Entities or individuals who do not hold a valid license may view the publicly
+available source code for evaluation or educational purposes only. They may not
+use, compile, modify, create derivative works from, or distribute the software
+in any form without first obtaining a license from the author.
+
+The following sections set forth the available license terms.
+
+
+-------------------------------------------------------------------------------
+Limited-Use License
+-------------------------------------------------------------------------------
+
+Permission is granted to any entity (individual or organization) with annual
+revenue under USD 1,000,000.
+
+Qualified users may install, compile, use, and modify this software in either
+source or compiled form. They may also redistribute it in source form, including
+public forks or derivative works, provided that:
+  1. This license text is included in full and unmodified.
+  2. No rights are sublicensed, sold, or otherwise granted to downstream
+     recipients. Each user must obtain their own license directly from the
+     author.
+  3. This license does not grant rights to redistribute the software in compiled
+     or object form; such rights may be available under other applicable
+     licenses.
+  4. By publicly posting or distributing modified versions, the contributor
+     grants the author (and successors or assigns) a perpetual, irrevocable,
+     worldwide, royalty-free license to use, modify, merge, sublicense, and
+     redistribute those contributions under any terms, including commercial
+     ones, without additional permission or attribution.
+
+The author may use technical or automated methods, including registration or
+activation requirements for compiled or distributed forms, to verify license
+compliance and to collect limited, non-personal usage metrics (such as version,
+feature utilization, or performance data) solely to improve the software or
+related services.
+
+This license does not convey ownership of any intellectual property and is
+non-transferable. The license terminates automatically if the user no longer
+meets the above criteria.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE
+LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+-------------------------------------------------------------------------------
+Commercial License
+-------------------------------------------------------------------------------
+
+Under a Commercial License, the licensee is granted a non-exclusive,
+non-transferable right to install, compile, use, and modify this software in
+either source or compiled form. They may also redistribute it in source form,
+including public forks or derivative works, provided that:
+  1. This license text is included in full and unmodified.
+  2. No rights are sublicensed, sold, or otherwise granted to downstream
+     recipients. Each user must obtain their own license directly from the
+     author.
+  3. This license does not grant rights to redistribute the software in compiled
+     or object form; such rights may be available under other applicable
+     licenses.
+  4. By publicly posting or distributing modified versions, the contributor
+     grants the author (and successors or assigns) a perpetual, irrevocable,
+     worldwide, royalty-free license to use, modify, merge, sublicense, and
+     redistribute those contributions under any terms, including commercial
+     ones, without additional permission or attribution.
+
+The author may use technical or automated methods, including registration or
+activation requirements for compiled or distributed forms, to verify license
+compliance and to collect limited, non-personal usage metrics (such as version,
+feature utilization, or performance data) solely to improve the software or
+related services.
+
+This license does not convey ownership of any intellectual property and is
+subject to the terms and duration agreed separately between the author and the
+licensee.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE
+LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+-------------------------------------------------------------------------------
+Consultant License
+-------------------------------------------------------------------------------
+
+Under a Consultant License, the licensee ("Consultant") is granted a
+non-exclusive, non-transferable right to install, compile, use, and modify this
+software in either source or compiled form for the purpose of developing,
+testing, modifying, or integrating software solutions for clients or other
+licensed users. This license does not include operating this software as an
+independent hosted service or offering it commercially on the Consultant’s own
+behalf.
+
+The Consultant may redistribute this software in either source or compiled form,
+including modified or integrated versions, to users or organizations that hold a
+valid license, provided that:
+  1. This license text is included in full and unmodified in any distributed
+     source form or accompanying documentation.
+  2. This license is non-transferable and grants no sublicensing rights. It
+     applies only to the Consultant and its employees or contractors engaged in
+     development activities under this license. Distribution to other parties
+     conveys no rights beyond those held under their own applicable license.
+  3. This license does not grant rights to redistribute the software beyond the
+     scope of this agreement; additional rights may be available under other
+     applicable licenses.
+
+The author may use technical or automated methods, including registration or
+activation requirements for compiled or distributed forms, to verify license
+compliance and to collect limited, non-personal usage metrics (such as version,
+feature utilization, or performance data) solely to improve the software or
+related services.
+
+This license does not convey ownership of any intellectual property and is
+subject to the terms and duration agreed separately between the author and the
+licensee.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE
+LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

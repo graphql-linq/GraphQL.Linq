@@ -1,0 +1,77 @@
+name: Run code tests
+
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Use .NET Core SDKs
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+      - name: Check code formatting
+        run: dotnet format --verify-no-changes --severity error
+
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Use .NET Core SDKs
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+          source-url: https://nuget.pkg.github.com/Shane32/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build solution [Debug]
+        run: dotnet build --no-restore
+      - name: Test solution [Debug]
+        run: dotnet test --no-restore --no-build -- --coverage --coverage-output-format cobertura --coverage-output coverage.cobertura.xml
+      # ==== code coverage reports ====
+      - name: Convert coverage report to clover & htmlsummary format
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.4.17
+        with:
+          reports: '**/coverage.cobertura.xml'
+          targetdir: '.'
+          reporttypes: 'Clover;HtmlSummary'
+          tag: 'test_${{ github.run_number }}'
+          assemblyfilters: +GraphQL*
+      - name: Convert coverage report to html
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.4.17
+        with:
+          reports: '**/coverage.cobertura.xml'
+          targetdir: './code_coverage'
+          reporttypes: 'Html'
+          tag: 'test_${{ github.run_number }}'
+          assemblyfilters: +GraphQL*
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Test coverage reports
+          path: |
+            **/coverage.cobertura.xml
+            Clover.xml
+            code_coverage/**
+            summary.html
+      - name: Monitor coverage
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: slavcodev/coverage-monitor-action@1.2.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          clover_file: "Clover.xml"
+          threshold_alert: 60
+          threshold_warning: 80

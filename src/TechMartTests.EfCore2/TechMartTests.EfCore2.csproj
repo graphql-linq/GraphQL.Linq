@@ -1,0 +1,32 @@
+﻿<Project Sdk="MSTest.Sdk/4.0.2">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <DefineConstants>$(DefineConstants);EFCORE2</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.3.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="Microsoft.VisualStudio.TestTools.UnitTesting.ParallelizeAttribute" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ObjectApprover\ObjectApprover.csproj" />
+    <ProjectReference Include="..\TechMart.EfCore2\TechMart.EfCore2.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="GraphQL.Linq" />
+    <Using Include="GraphQL.Linq.EntityFrameworkCore2" />
+    <Using Include="TechMartDb.TechMartDbContext" Alias="TechMartDbContext" />
+    <Using Include="TechMartDb.Models" />
+  </ItemGroup>
+
+</Project>

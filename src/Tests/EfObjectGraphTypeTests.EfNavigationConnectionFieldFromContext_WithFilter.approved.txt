@@ -1,0 +1,36 @@
+{
+  "data": {
+    "product": {
+      "all": {
+        "edges": [
+          {
+            "node": {
+              "categoryId": 1
+            }
+          },
+          {
+            "node": {
+              "categoryId": 2
+            }
+          }
+        ],
+        "totalCount": 2
+      },
+      "activeOnly": {
+        "edges": [
+          {
+            "node": {
+              "categoryId": 1
+            }
+          },
+          {
+            "node": {
+              "categoryId": 2
+            }
+          }
+        ],
+        "totalCount": 2
+      }
+    }
+  }
+}

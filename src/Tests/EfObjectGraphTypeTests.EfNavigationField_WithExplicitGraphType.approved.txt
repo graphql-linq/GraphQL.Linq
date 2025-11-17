@@ -1,0 +1,11 @@
+{
+  "data": {
+    "product": {
+      "creatorWithType": {
+        "id": 1,
+        "username": "admin",
+        "email": "admin@techmart.com"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "errors": [
+    {
+      "message": "Cannot return null for a non-null type. Field: nonNullableDescription, Type: String!.",
+      "locations": [
+        {
+          "line": 2,
+          "column": 22
+        }
+      ],
+      "path": [
+        "product",
+        "nonNullableDescription"
+      ],
+      "extensions": {
+        "code": "INVALID_OPERATION",
+        "codes": [
+          "INVALID_OPERATION"
+        ]
+      }
+    }
+  ],
+  "data": null
+}

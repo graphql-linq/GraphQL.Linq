@@ -1,0 +1,23 @@
+{
+  "data": {
+    "product": {
+      "categoriesConnection": {
+        "edges": [
+          {
+            "node": {
+              "productId": 1,
+              "categoryId": 1
+            }
+          },
+          {
+            "node": {
+              "productId": 1,
+              "categoryId": 2
+            }
+          }
+        ],
+        "totalCount": 2
+      }
+    }
+  }
+}

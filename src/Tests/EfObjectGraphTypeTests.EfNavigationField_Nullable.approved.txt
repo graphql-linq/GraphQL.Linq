@@ -1,0 +1,10 @@
+{
+  "data": {
+    "product": {
+      "nullableCreator": {
+        "id": 1,
+        "username": "admin"
+      }
+    }
+  }
+}

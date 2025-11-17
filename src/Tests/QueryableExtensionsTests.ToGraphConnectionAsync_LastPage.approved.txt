@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "message": "Must specify before when using last",
+      "locations": [
+        {
+          "line": 2,
+          "column": 5
+        }
+      ],
+      "path": [
+        "productsConnection"
+      ]
+    }
+  ],
+  "data": null
+}

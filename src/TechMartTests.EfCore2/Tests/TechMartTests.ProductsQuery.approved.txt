@@ -1,0 +1,86 @@
+{
+  "data": {
+    "products": {
+      "totalCount": 3,
+      "edges": [
+        {
+          "cursor": "0",
+          "node": {
+            "id": "2",
+            "name": "Wireless Mouse",
+            "description": "Ergonomic wireless mouse with precision tracking",
+            "price": 29.99,
+            "stockQuantity": 150,
+            "categories": [
+              {
+                "id": "1",
+                "name": "Electronics",
+                "description": "Electronic devices and accessories"
+              },
+              {
+                "id": "3",
+                "name": "Accessories",
+                "description": "Computer accessories and peripherals"
+              }
+            ]
+          }
+        },
+        {
+          "cursor": "1",
+          "node": {
+            "id": "3",
+            "name": "USB-C Hub",
+            "description": "7-in-1 USB-C adapter with HDMI, USB 3.0, and SD card reader",
+            "price": 49.99,
+            "stockQuantity": 80,
+            "categories": [
+              {
+                "id": "1",
+                "name": "Electronics",
+                "description": "Electronic devices and accessories"
+              },
+              {
+                "id": "3",
+                "name": "Accessories",
+                "description": "Computer accessories and peripherals"
+              }
+            ]
+          }
+        },
+        {
+          "cursor": "2",
+          "node": {
+            "id": "4",
+            "name": "Mechanical Keyboard",
+            "description": "RGB mechanical gaming keyboard with Cherry MX switches",
+            "price": 149.99,
+            "stockQuantity": 60,
+            "categories": [
+              {
+                "id": "1",
+                "name": "Electronics",
+                "description": "Electronic devices and accessories"
+              },
+              {
+                "id": "3",
+                "name": "Accessories",
+                "description": "Computer accessories and peripherals"
+              },
+              {
+                "id": "4",
+                "name": "Gaming",
+                "description": "Gaming hardware and accessories"
+              }
+            ]
+          }
+        }
+      ],
+      "pageInfo": {
+        "startCursor": "0",
+        "endCursor": "2",
+        "hasPreviousPage": false,
+        "hasNextPage": false
+      }
+    }
+  }
+}

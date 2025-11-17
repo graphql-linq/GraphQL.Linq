@@ -1,0 +1,33 @@
+<Project Sdk="MSTest.Sdk/4.0.2">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <DefineConstants>$(DefineConstants);EFCORE10</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="Microsoft.VisualStudio.TestTools.UnitTesting.ParallelizeAttribute" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ObjectApprover\ObjectApprover.csproj" />
+    <ProjectReference Include="..\TechMart.EfCore10\TechMart.EfCore10.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="GraphQL.Linq" />
+    <Using Include="GraphQL.Linq.EntityFrameworkCore10" />
+    <Using Include="TechMartDb.TechMartDbContext" Alias="TechMartDbContext" />
+    <Using Include="TechMartDb.Models" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\TechMartTests.EfCore2\Tests\*.cs" Link="Tests\%(RecursiveDir)%(Filename)%(Extension)" />
+    <Compile Include="..\TechMartTests.EfCore3\*.cs" />
+  </ItemGroup>
+
+</Project>

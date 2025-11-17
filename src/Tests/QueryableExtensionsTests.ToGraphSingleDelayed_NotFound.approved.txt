@@ -1,0 +1,23 @@
+{
+  "errors": [
+    {
+      "message": "Cannot return null for a non-null type. Field: productDelayed, Type: Product!.",
+      "locations": [
+        {
+          "line": 2,
+          "column": 5
+        }
+      ],
+      "path": [
+        "productDelayed"
+      ],
+      "extensions": {
+        "code": "INVALID_OPERATION",
+        "codes": [
+          "INVALID_OPERATION"
+        ]
+      }
+    }
+  ],
+  "data": null
+}

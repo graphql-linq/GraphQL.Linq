@@ -1,0 +1,27 @@
+﻿<Project Sdk="MSTest.Sdk/4.0.2">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GraphQL.Linq.EntityFrameworkCore10\GraphQL.Linq.EntityFrameworkCore10.csproj" />
+    <ProjectReference Include="..\GraphQL.Linq.EntityFrameworkCore2\GraphQL.Linq.EntityFrameworkCore2.csproj" />
+    <ProjectReference Include="..\GraphQL.Linq.EntityFrameworkCore3\GraphQL.Linq.EntityFrameworkCore3.csproj" />
+    <ProjectReference Include="..\GraphQL.Linq.EntityFrameworkCore6\GraphQL.Linq.EntityFrameworkCore6.csproj" />
+    <ProjectReference Include="..\GraphQL.Linq.EntityFrameworkCore8\GraphQL.Linq.EntityFrameworkCore8.csproj" />
+    <ProjectReference Include="..\GraphQL.Linq.LinqToDb6\GraphQL.Linq.LinqToDb6.csproj" />
+    <ProjectReference Include="..\GraphQL.Linq.LinqToDb\GraphQL.Linq.LinqToDb.csproj" />
+    <ProjectReference Include="..\GraphQL.Linq\GraphQL.Linq.csproj" />
+    <ProjectReference Include="..\ObjectApprover\ObjectApprover.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="PublicApiGenerator" Version="11.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="Microsoft.VisualStudio.TestTools.UnitTesting.ParallelizeAttribute" />
+  </ItemGroup>
+
+</Project>

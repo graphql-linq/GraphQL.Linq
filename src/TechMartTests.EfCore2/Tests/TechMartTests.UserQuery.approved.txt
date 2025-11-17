@@ -1,0 +1,11 @@
+{
+  "data": {
+    "user": {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@techmart.com",
+      "role": "ADMIN",
+      "isActive": true
+    }
+  }
+}

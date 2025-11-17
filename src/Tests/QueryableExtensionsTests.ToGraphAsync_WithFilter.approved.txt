@@ -1,0 +1,36 @@
+{
+  "data": {
+    "productsFiltered": [
+      {
+        "id": 1,
+        "name": "UltraBook Pro 15",
+        "isActive": true
+      },
+      {
+        "id": 2,
+        "name": "Wireless Mouse",
+        "isActive": true
+      },
+      {
+        "id": 3,
+        "name": "USB-C Hub",
+        "isActive": true
+      },
+      {
+        "id": 4,
+        "name": "Mechanical Keyboard",
+        "isActive": true
+      },
+      {
+        "id": 5,
+        "name": "4K Monitor",
+        "isActive": true
+      },
+      {
+        "id": 6,
+        "name": "Generic Cable",
+        "isActive": true
+      }
+    ]
+  }
+}

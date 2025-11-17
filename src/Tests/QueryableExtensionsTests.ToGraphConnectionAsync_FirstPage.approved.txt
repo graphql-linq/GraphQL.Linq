@@ -1,0 +1,29 @@
+{
+  "data": {
+    "productsConnection": {
+      "edges": [
+        {
+          "node": {
+            "id": 1,
+            "name": "UltraBook Pro 15"
+          },
+          "cursor": "0"
+        },
+        {
+          "node": {
+            "id": 2,
+            "name": "Wireless Mouse"
+          },
+          "cursor": "1"
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": true,
+        "hasPreviousPage": false,
+        "startCursor": "0",
+        "endCursor": "1"
+      },
+      "totalCount": 6
+    }
+  }
+}

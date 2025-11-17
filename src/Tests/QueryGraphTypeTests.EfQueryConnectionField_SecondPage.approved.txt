@@ -1,0 +1,28 @@
+{
+  "data": {
+    "productsConnection": {
+      "edges": [
+        {
+          "node": {
+            "id": 3,
+            "name": "USB-C Hub"
+          },
+          "cursor": "2"
+        },
+        {
+          "node": {
+            "id": 4,
+            "name": "Mechanical Keyboard"
+          },
+          "cursor": "3"
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+        "startCursor": "2",
+        "endCursor": "3"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "data": {
+    "product": {
+      "all": [
+        {
+          "categoryId": 1
+        },
+        {
+          "categoryId": 2
+        }
+      ],
+      "activeOnly": [
+        {
+          "categoryId": 1
+        },
+        {
+          "categoryId": 2
+        }
+      ]
+    }
+  }
+}

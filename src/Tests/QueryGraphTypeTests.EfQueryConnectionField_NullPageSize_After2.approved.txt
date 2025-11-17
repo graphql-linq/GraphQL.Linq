@@ -1,0 +1,36 @@
+{
+  "data": {
+    "productsConnectionNullPageSize": {
+      "edges": [
+        {
+          "node": {
+            "id": 4,
+            "name": "Mechanical Keyboard"
+          },
+          "cursor": "3"
+        },
+        {
+          "node": {
+            "id": 5,
+            "name": "4K Monitor"
+          },
+          "cursor": "4"
+        },
+        {
+          "node": {
+            "id": 6,
+            "name": "Generic Cable"
+          },
+          "cursor": "5"
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": false,
+        "hasPreviousPage": true,
+        "startCursor": "3",
+        "endCursor": "5"
+      },
+      "totalCount": 6
+    }
+  }
+}

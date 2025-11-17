@@ -1,0 +1,28 @@
+{
+  "data": {
+    "productsConnectionAsync": {
+      "edges": [
+        {
+          "node": {
+            "id": 4,
+            "name": "Mechanical Keyboard"
+          },
+          "cursor": "3"
+        },
+        {
+          "node": {
+            "id": 5,
+            "name": "4K Monitor"
+          },
+          "cursor": "4"
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+        "startCursor": "3",
+        "endCursor": "4"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "data": {
+    "product": {
+      "filteredCategoriesWithResolver": {
+        "edges": [
+          {
+            "node": {
+              "categoryId": 1
+            }
+          },
+          {
+            "node": {
+              "categoryId": 2
+            }
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    }
+  }
+}

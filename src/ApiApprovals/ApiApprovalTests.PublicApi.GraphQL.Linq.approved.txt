@@ -1,0 +1,675 @@
+namespace GraphQL.Linq
+{
+    public static class ComplexGraphTypeExtensions
+    {
+        public static GraphQL.Builders.FieldBuilder<object, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionField<TDbContext, TReturn>(this GraphQL.Types.IComplexGraphType graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.IQueryable<TReturn>> resolve, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<object, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionField<TDbContext, TReturn>(this GraphQL.Types.IComplexGraphType graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.IQueryable<TReturn>> resolve, int? defaultPageSize = 100, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<TSource, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionField<TDbContext, TSource, TReturn>(this GraphQL.Types.ComplexGraphType<TSource> graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> resolve, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<TSource, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionField<TDbContext, TSource, TReturn>(this GraphQL.Types.ComplexGraphType<TSource> graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> resolve, int? defaultPageSize = 100, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<object, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionFieldAsync<TDbContext, TReturn>(this GraphQL.Types.IComplexGraphType graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<object, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionFieldAsync<TDbContext, TReturn>(this GraphQL.Types.IComplexGraphType graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, int? defaultPageSize = 100, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<TSource, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionFieldAsync<TDbContext, TSource, TReturn>(this GraphQL.Types.ComplexGraphType<TSource> graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<TSource, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionFieldAsync<TDbContext, TSource, TReturn>(this GraphQL.Types.ComplexGraphType<TSource> graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, int? defaultPageSize = 100, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<object, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryField<TDbContext, TReturn>(this GraphQL.Types.IComplexGraphType graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.IQueryable<TReturn>> resolve, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<TSource, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryField<TDbContext, TSource, TReturn>(this GraphQL.Types.ComplexGraphType<TSource> graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> resolve, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<object, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryFieldAsync<TDbContext, TReturn>(this GraphQL.Types.IComplexGraphType graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<TSource, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryFieldAsync<TDbContext, TSource, TReturn>(this GraphQL.Types.ComplexGraphType<TSource> graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<object, GraphQL.Linq.GraphApi.EfSource<TReturn>> EfSingleField<TDbContext, TReturn>(this GraphQL.Types.IComplexGraphType graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.IQueryable<TReturn>> resolve, bool nullable = false, System.Type? graphType = null, bool addIdArgument = true, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<TSource, GraphQL.Linq.GraphApi.EfSource<TReturn>> EfSingleField<TDbContext, TSource, TReturn>(this GraphQL.Types.ComplexGraphType<TSource> graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> resolve, bool nullable = false, System.Type? graphType = null, bool addIdArgument = true, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<object, GraphQL.Linq.GraphApi.EfSource<TReturn>> EfSingleFieldAsync<TDbContext, TReturn>(this GraphQL.Types.IComplexGraphType graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, bool nullable = false, System.Type? graphType = null, bool addIdArgument = true, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<TSource, GraphQL.Linq.GraphApi.EfSource<TReturn>> EfSingleFieldAsync<TDbContext, TSource, TReturn>(this GraphQL.Types.ComplexGraphType<TSource> graph, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, bool nullable = false, System.Type? graphType = null, bool addIdArgument = true, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+    }
+    public class EfConnectionMapper : GraphQL.Types.IGraphTypeMappingProvider
+    {
+        public EfConnectionMapper() { }
+        public System.Type? GetGraphTypeFromClrType(System.Type clrType, bool isInputType, System.Type? preferredGraphType) { }
+    }
+    public class EfConnectionType<T> : GraphQL.Types.Relay.ConnectionType<GraphQL.Types.GraphQLClrOutputTypeReference<GraphQL.Linq.GraphApi.EfSource<T>>, GraphQL.Linq.EfEdgeType<T>>
+        where T :  class
+    {
+        public EfConnectionType() { }
+    }
+    public class EfDbSingleContextTypeProvider<TDbContext> : GraphQL.Linq.GraphApi.IEfDbContextTypeProvider
+    {
+        public EfDbSingleContextTypeProvider() { }
+        public System.Type? GetDbContextType(System.Linq.IQueryable queryable) { }
+    }
+    public class EfEdgeType<T> : GraphQL.Types.Relay.EdgeType<GraphQL.Types.GraphQLClrOutputTypeReference<GraphQL.Linq.GraphApi.EfSource<T>>>
+        where T :  class
+    {
+        public EfEdgeType() { }
+    }
+    public class EfFieldBuilder<TDbContext, TSourceType, TReturnType> : GraphQL.Builders.FieldBuilder<TSourceType, TReturnType>
+    {
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Argument(GraphQL.Types.IGraphType type, string name, System.Action<GraphQL.Types.QueryArgument>? configure = null) { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Argument(System.Type type, string name, System.Action<GraphQL.Types.QueryArgument>? configure = null) { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Argument<TArgumentGraphType>(string name)
+            where TArgumentGraphType : GraphQL.Types.IGraphType { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Argument<TArgumentGraphType>(string name, System.Action<GraphQL.Types.QueryArgument>? configure = null)
+            where TArgumentGraphType : GraphQL.Types.IGraphType { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Argument<TArgumentClrType>(string name, bool nullable = false, System.Action<GraphQL.Types.QueryArgument>? configure = null) { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Argument<TArgumentGraphType>(string name, string? description, System.Action<GraphQL.Types.QueryArgument>? configure = null)
+            where TArgumentGraphType : GraphQL.Types.IGraphType { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Argument<TArgumentClrType>(string name, bool nullable, string? description, System.Action<GraphQL.Types.QueryArgument>? configure = null) { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Arguments(params GraphQL.Types.QueryArgument[] arguments) { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Arguments(System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument> arguments) { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Configure(System.Action<GraphQL.Types.FieldType> configure) { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>>> DelayLoadEntry<TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSourceType>, System.Linq.IQueryable<TReturn>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TReturnType>> keySelector, System.Type? graphType = null)
+            where TReturn :  class { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>>> DelayLoadEntry<TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSourceType>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TReturnType>> keySelector, System.Type? graphType = null)
+            where TReturn :  class { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>>> DelayLoadEntry<TObject, TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSourceType>, System.Linq.IQueryable<TObject>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TReturnType>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, System.Type? graphType = null)
+            where TObject :  class
+            where TReturn :  class { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>>> DelayLoadEntry<TObject, TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSourceType>, System.Threading.Tasks.Task<System.Linq.IQueryable<TObject>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TReturnType>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, System.Type? graphType = null)
+            where TObject :  class
+            where TReturn :  class { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> DelayLoadList<TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSourceType>, System.Linq.IQueryable<TReturn>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TReturnType>> keySelector, System.Type? graphType = null)
+            where TReturn :  class { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> DelayLoadList<TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSourceType>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TReturnType>> keySelector, System.Type? graphType = null)
+            where TReturn :  class { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> DelayLoadList<TObject, TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSourceType>, System.Linq.IQueryable<TObject>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TReturnType>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, System.Type? graphType = null)
+            where TObject :  class
+            where TReturn :  class { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> DelayLoadList<TObject, TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSourceType>, System.Threading.Tasks.Task<System.Linq.IQueryable<TObject>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TReturnType>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, System.Type? graphType = null)
+            where TObject :  class
+            where TReturn :  class { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> DeprecationReason(string? deprecationReason) { }
+        public new GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturnType> Description(string? description) { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturn> ThenResolve<TReturn>(System.Func<TReturnType, TReturn> resolver, bool? nullable = default, System.Type? graphType = null) { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturn> ThenResolve<TReturn>(System.Func<GraphQL.IResolveFieldContext<TSourceType>, TReturnType, System.Threading.Tasks.Task<TReturn>> resolver, bool? nullable = default, System.Type? graphType = null) { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, TSourceType, TReturn> ThenResolve<TReturn>(System.Func<GraphQL.IResolveFieldContext<TSourceType>, TReturnType, TReturn> resolver, bool? nullable = default, System.Type? graphType = null) { }
+    }
+    public static class EfFieldHelpers
+    {
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TProperty> EfField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default, System.Type? graphType = null)
+            where TSource :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TProperty> EfField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default, System.Type? graphType = null)
+            where TSource :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TReturn> EfField<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, TReturn?>> expression, bool? nullable = default, System.Type? graphType = null)
+            where TSource :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TReturn> EfFieldFromContext<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.Expressions.Expression<System.Func<TSource, TReturn?>>> resolveExpression, bool nullable = false, System.Type? graphType = null)
+            where TSource :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TProperty> EfIdField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default)
+            where TSource :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TProperty> EfIdField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default)
+            where TSource :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationConnectionField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TProperty> connectionResolver, System.Type? graphType = null)
+            where TSource :  class
+            where TProperty :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationConnectionField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, int defaultPageSize = 100, System.Type? graphType = null)
+            where TSource :  class
+            where TProperty :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionField<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> expression, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null)
+            where TSource :  class
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionField<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> expression, int defaultPageSize = 100, System.Type? graphType = null)
+            where TSource :  class
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionField<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, System.Collections.Generic.IEnumerable<TReturn>>> expression, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null)
+            where TSource :  class
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionField<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, System.Collections.Generic.IEnumerable<TReturn>>> expression, int defaultPageSize = 100, System.Type? graphType = null)
+            where TSource :  class
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionFieldFromContext<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>>> expression, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TSource :  class
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionFieldFromContext<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>>> expression, int? defaultPageSize = 100, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TSource :  class
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Linq.GraphApi.EfSource<TProperty>> EfNavigationField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default, System.Type? graphType = null)
+            where TSource :  class
+            where TProperty :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Linq.GraphApi.EfSource<TProperty>> EfNavigationField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default, System.Type? graphType = null)
+            where TSource :  class
+            where TProperty :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Linq.GraphApi.EfSource<TReturn>> EfNavigationField<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, TReturn?>> expression, bool? nullable = default, System.Type? graphType = null)
+            where TSource :  class
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Linq.GraphApi.EfSource<TProperty>> EfNavigationFieldLink<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, bool nullable = false, System.Type? graphType = null)
+            where TSource :  class
+            where TProperty :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationListField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, System.Type? graphType = null)
+            where TSource :  class
+            where TProperty :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationListField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, System.Type? graphType = null)
+            where TSource :  class
+            where TProperty :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationListField<TDbContext, TSource, TProperty>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, System.Type? graphType = null)
+            where TSource :  class
+            where TProperty :  class { }
+        public static GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationListFieldFromContext<TDbContext, TSource, TReturn>(GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource> graph, string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>>> resolveExpression, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TSource :  class
+            where TReturn :  class { }
+    }
+    public abstract class EfGraphQLServiceBase<TDbContext> : GraphQL.Linq.GraphApi.IEfDbPrimaryKeyNamesProvider<TDbContext>, GraphQL.Linq.IEfGraphQLService<TDbContext>
+    {
+        public EfGraphQLServiceBase(GraphQL.Linq.GraphApi.IEfDbPrimaryKeyNamesProvider<TDbContext> efDbKeyNames) { }
+        public EfGraphQLServiceBase(GraphQL.Linq.GraphApi.IEfDbPrimaryKeyNamesProvider<TDbContext> efDbKeyNames, int maxParameterizeContainsVariables) { }
+        protected GraphQL.Linq.GraphApi.IEfDbPrimaryKeyNamesProvider<TDbContext> EfDbKeyNamesProvider { get; }
+        protected int MaxParameterizeContainsVariables { get; }
+        public virtual System.Linq.Expressions.Expression<System.Func<TObject, bool>> CreateWhereInExpression<TKey, TObject>(System.Func<TDbContext> dbContextFactory, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Collections.Generic.IEnumerable<TKey> keys) { }
+        public virtual System.Linq.Expressions.Expression<System.Func<TSource, object>> GetDummyExpression<TSource>() { }
+        public virtual System.Collections.Generic.IEnumerable<string> GetPrimaryKeyNames<TSource>() { }
+        public abstract System.Threading.Tasks.Task<int> QueryCountAsync<TReturn>(System.Linq.IQueryable<TReturn> query, System.Threading.CancellationToken cancellationToken);
+        public abstract System.Threading.Tasks.Task<TReturn?> QuerySingleOrDefaultAsync<TReturn>(System.Linq.IQueryable<TReturn> query, System.Threading.CancellationToken cancellationToken)
+            where TReturn :  class;
+        public abstract System.Threading.Tasks.Task<System.Collections.Generic.IList<TReturn>> QueryToListAsync<TReturn>(System.Linq.IQueryable<TReturn> query, System.Threading.CancellationToken cancellationToken)
+            where TReturn :  class;
+    }
+    public static class EfGraphQLServiceExtensions
+    {
+        public static GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource> BuildResolveEfFieldContext<TDbContext, TSource>(this GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, GraphQL.IResolveFieldContext<TSource> context) { }
+    }
+    public abstract class EfObjectGraphType<TDbContext, TSource> : GraphQL.Types.ObjectGraphType<GraphQL.Linq.GraphApi.EfSource<TSource>>, GraphQL.Linq.IEfObjectGraphType<TDbContext, TSource>, GraphQL.Types.IComplexGraphType, GraphQL.Types.IGraphType, GraphQL.Types.IMetadataReader, GraphQL.Types.IMetadataWriter, GraphQL.Types.INamedType, GraphQL.Types.IProvideDeprecationReason, GraphQL.Types.IProvideDescription, GraphQL.Types.IProvideMetadata
+        where TSource :  class
+    {
+        protected EfObjectGraphType() { }
+        public GraphQL.Linq.DataLoaders.EfEntityDataLoader<TDbContext, TKey, GraphQL.Linq.GraphApi.EfSource<TSource>, TReturn, TReturn> CreateDelayedEntryLoader<TKey, TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>>, System.Linq.IQueryable<TReturn>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector)
+            where TReturn :  class { }
+        public GraphQL.Linq.DataLoaders.EfEntityListDataLoader<TDbContext, TKey, GraphQL.Linq.GraphApi.EfSource<TSource>, TReturn, TReturn> CreateDelayedListLoader<TKey, TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>>, System.Linq.IQueryable<TReturn>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector)
+            where TReturn :  class { }
+        public GraphQL.Linq.DataLoaders.EfEntityListDataLoader<TDbContext, TKey, GraphQL.Linq.GraphApi.EfSource<TSource>, TObject, TReturn> CreateDelayedListLoader<TKey, TObject, TReturn>(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>>, System.Linq.IQueryable<TObject>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector)
+            where TObject :  class
+            where TReturn :  class { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TProperty> EfField<TProperty>(System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default, System.Type? graphType = null) { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TProperty> EfField<TProperty>(string name, System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default, System.Type? graphType = null) { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TReturn> EfField<TReturn>(string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, TReturn?>> expression, bool? nullable = default, System.Type? graphType = null) { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TReturn> EfFieldFromContext<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.Expressions.Expression<System.Func<TSource, TReturn?>>> resolveExpression, bool nullable = false, System.Type? graphType = null) { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TProperty> EfIdField<TProperty>(System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default) { }
+        public GraphQL.Linq.EfFieldBuilder<TDbContext, GraphQL.Linq.GraphApi.EfSource<TSource>, TProperty> EfIdField<TProperty>(string name, System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default) { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationConnectionField<TProperty>(System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TProperty> connectionResolver, System.Type? graphType = null)
+            where TProperty :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationConnectionField<TProperty>(System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, int defaultPageSize = 100, System.Type? graphType = null)
+            where TProperty :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionField<TReturn>(string name, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> expression, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null)
+            where TReturn :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionField<TReturn>(string name, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> expression, int defaultPageSize = 100, System.Type? graphType = null)
+            where TReturn :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionField<TReturn>(string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, System.Collections.Generic.IEnumerable<TReturn>>> expression, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null)
+            where TReturn :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionField<TReturn>(string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, System.Collections.Generic.IEnumerable<TReturn>>> expression, int defaultPageSize = 100, System.Type? graphType = null)
+            where TReturn :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionFieldFromContext<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>>> expression, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfNavigationConnectionFieldFromContext<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>>> expression, int defaultPageSize = 100, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Linq.GraphApi.EfSource<TProperty>> EfNavigationField<TProperty>(System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default, System.Type? graphType = null)
+            where TProperty :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Linq.GraphApi.EfSource<TProperty>> EfNavigationField<TProperty>(string name, System.Linq.Expressions.Expression<System.Func<TSource, TProperty?>> expression, bool? nullable = default, System.Type? graphType = null)
+            where TProperty :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Linq.GraphApi.EfSource<TProperty>> EfNavigationField<TProperty>(string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, TProperty?>> expression, bool? nullable = default, System.Type? graphType = null)
+            where TProperty :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, GraphQL.Linq.GraphApi.EfSource<TProperty>> EfNavigationFieldLink<TProperty>(string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, bool nullable = false, System.Type? graphType = null)
+            where TProperty :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationListField<TProperty>(System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, System.Type? graphType = null)
+            where TProperty :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationListField<TProperty>(string name, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, System.Type? graphType = null)
+            where TProperty :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationListField<TProperty>(string name, System.Linq.Expressions.Expression<System.Func<TDbContext, TSource, System.Collections.Generic.IEnumerable<TProperty>>> expression, System.Type? graphType = null)
+            where TProperty :  class { }
+        public GraphQL.Builders.FieldBuilder<GraphQL.Linq.GraphApi.EfSource<TSource>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TProperty>>> EfNavigationListFieldFromContext<TProperty>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TProperty>>>> expression, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TProperty :  class { }
+    }
+    public class ExplicitResolveEfConnectionContext<TDbContext, TSource> : GraphQL.Linq.ResolveEfConnectionContext<TDbContext, TSource>
+    {
+        public ExplicitResolveEfConnectionContext(GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, GraphQL.IResolveFieldContext baseContext, bool biDirectional, int? defaultPageSize, int? first, int? last, string? after, string? before) { }
+        public override string? After { get; }
+        public override string? Before { get; }
+        protected override int? FirstInternal { get; }
+        protected override int? LastInternal { get; }
+    }
+    public static class FieldBuilderExtensions
+    {
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>>> DelayLoadEntry<TDbContext, TSource, TKey, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TKey> fieldBuilder, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector, System.Type? graphType = null)
+            where TReturn :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>>> DelayLoadEntry<TDbContext, TSource, TKey, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TKey> fieldBuilder, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector, System.Type? graphType = null)
+            where TReturn :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>>> DelayLoadEntry<TDbContext, TSource, TKey, TObject, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TKey> fieldBuilder, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TObject>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, System.Type? graphType = null)
+            where TObject :  class
+            where TReturn :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>>> DelayLoadEntry<TDbContext, TSource, TKey, TObject, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TKey> fieldBuilder, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TObject>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, System.Type? graphType = null)
+            where TObject :  class
+            where TReturn :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> DelayLoadList<TDbContext, TSource, TKey, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TKey> fieldBuilder, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector, System.Type? graphType = null)
+            where TReturn :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> DelayLoadList<TDbContext, TSource, TKey, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TKey> fieldBuilder, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector, System.Type? graphType = null)
+            where TReturn :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> DelayLoadList<TDbContext, TSource, TKey, TObject, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TKey> fieldBuilder, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TObject>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, System.Type? graphType = null)
+            where TObject :  class
+            where TReturn :  class { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> DelayLoadList<TDbContext, TSource, TKey, TObject, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TKey> fieldBuilder, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TObject>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, System.Type? graphType = null)
+            where TObject :  class
+            where TReturn :  class { }
+        public static GraphQL.Builders.FieldBuilder<TSource, TReturn> ThenResolve<TSource, TObject, TReturn>(this GraphQL.Builders.FieldBuilder<TSource, TObject> fieldBuilder, System.Func<TObject, TReturn> resolver, bool? nullable = default, System.Type? graphType = null) { }
+        public static GraphQL.Builders.FieldBuilder<TSource, TReturn> ThenResolve<TSource, TObject, TReturn>(this GraphQL.Builders.FieldBuilder<TSource, TObject> fieldBuilder, System.Func<GraphQL.IResolveFieldContext<TSource>, TObject, System.Threading.Tasks.Task<TReturn>> resolver, bool? nullable = default, System.Type? graphType = null) { }
+        public static GraphQL.Builders.FieldBuilder<TSource, TReturn> ThenResolve<TSource, TObject, TReturn>(this GraphQL.Builders.FieldBuilder<TSource, TObject> fieldBuilder, System.Func<GraphQL.IResolveFieldContext<TSource>, TObject, TReturn> resolver, bool? nullable = default, System.Type? graphType = null) { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TReturn> ThenResolve<TDbContext, TSource, TObject, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TObject> fieldBuilder, System.Func<TObject, TReturn> resolver, bool? nullable = default, System.Type? graphType = null) { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TReturn> ThenResolve<TDbContext, TSource, TObject, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TObject> fieldBuilder, System.Func<GraphQL.IResolveFieldContext<TSource>, TObject, System.Threading.Tasks.Task<TReturn>> resolver, bool? nullable = default, System.Type? graphType = null) { }
+        public static GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TReturn> ThenResolve<TDbContext, TSource, TObject, TReturn>(GraphQL.Linq.EfFieldBuilder<TDbContext, TSource, TObject> fieldBuilder, System.Func<GraphQL.IResolveFieldContext<TSource>, TObject, TReturn> resolver, bool? nullable = default, System.Type? graphType = null) { }
+    }
+    public interface IEfGraphQLService<TDbContext> : GraphQL.Linq.GraphApi.IEfDbPrimaryKeyNamesProvider<TDbContext>
+    {
+        GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource> BuildResolveEfFieldContext<TSource>(GraphQL.IResolveFieldContext context);
+        System.Linq.Expressions.Expression<System.Func<TObject, bool>> CreateWhereInExpression<TKey, TObject>(System.Func<TDbContext> dbContextFactory, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Collections.Generic.IEnumerable<TKey> keys);
+        System.Threading.Tasks.Task<int> QueryCountAsync<TReturn>(System.Linq.IQueryable<TReturn> query, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<TReturn?> QuerySingleOrDefaultAsync<TReturn>(System.Linq.IQueryable<TReturn> query, System.Threading.CancellationToken cancellationToken = default)
+            where TReturn :  class;
+        System.Threading.Tasks.Task<System.Collections.Generic.IList<TReturn>> QueryToListAsync<TReturn>(System.Linq.IQueryable<TReturn> query, System.Threading.CancellationToken cancellationToken = default)
+            where TReturn :  class;
+    }
+    public interface IEfObjectGraphType<TDbContext, TSource> : GraphQL.Types.IComplexGraphType, GraphQL.Types.IGraphType, GraphQL.Types.IMetadataReader, GraphQL.Types.IMetadataWriter, GraphQL.Types.INamedType, GraphQL.Types.IProvideDeprecationReason, GraphQL.Types.IProvideDescription, GraphQL.Types.IProvideMetadata
+        where TSource :  class { }
+    public interface IResolveEfConnectionContext<TDbContext> : GraphQL.Builders.IResolveConnectionContext, GraphQL.Execution.IProvideUserContext, GraphQL.IResolveFieldContext, GraphQL.Linq.IResolveEfFieldContext<TDbContext> { }
+    public interface IResolveEfConnectionContext<TDbContext, TSource> : GraphQL.Builders.IResolveConnectionContext, GraphQL.Builders.IResolveConnectionContext<TSource>, GraphQL.Execution.IProvideUserContext, GraphQL.IResolveFieldContext, GraphQL.IResolveFieldContext<TSource>, GraphQL.Linq.IResolveEfConnectionContext<TDbContext>, GraphQL.Linq.IResolveEfFieldContext<TDbContext>, GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource> { }
+    public interface IResolveEfFieldContext<TDbContext> : GraphQL.Execution.IProvideUserContext, GraphQL.IResolveFieldContext
+    {
+        TDbContext DbContext { get; }
+        GraphQL.Linq.IEfGraphQLService<TDbContext> EfGraphQLService { get; }
+    }
+    public interface IResolveEfFieldContext<TDbContext, TSource> : GraphQL.Execution.IProvideUserContext, GraphQL.IResolveFieldContext, GraphQL.IResolveFieldContext<TSource>, GraphQL.Linq.IResolveEfFieldContext<TDbContext> { }
+    public abstract class QueryGraphType<TDbContext> : GraphQL.Linq.QueryGraphType<TDbContext, object>
+    {
+        public QueryGraphType(GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService) { }
+    }
+    public abstract class QueryGraphType<TDbContext, TSource> : GraphQL.Types.ObjectGraphType<TSource>
+    {
+        public QueryGraphType(GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService) { }
+        protected GraphQL.Linq.IEfGraphQLService<TDbContext> EfGraphQLService { get; }
+        public virtual GraphQL.Builders.FieldBuilder<TSource, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionField<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> resolve, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public virtual GraphQL.Builders.FieldBuilder<TSource, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionField<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> resolve, int? defaultPageSize = 100, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public virtual GraphQL.Builders.FieldBuilder<TSource, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionFieldAsync<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> connectionResolver, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public virtual GraphQL.Builders.FieldBuilder<TSource, GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryConnectionFieldAsync<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, int? defaultPageSize = 100, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public virtual GraphQL.Builders.FieldBuilder<TSource, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryField<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> resolve, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public virtual GraphQL.Builders.FieldBuilder<TSource, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> EfQueryFieldAsync<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, System.Type? graphType = null, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public virtual GraphQL.Builders.FieldBuilder<TSource, GraphQL.Linq.GraphApi.EfSource<TReturn>> EfSingleField<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Linq.IQueryable<TReturn>> resolve, bool nullable = false, System.Type? graphType = null, bool addIdArgument = true, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+        public virtual GraphQL.Builders.FieldBuilder<TSource, GraphQL.Linq.GraphApi.EfSource<TReturn>> EfSingleFieldAsync<TReturn>(string name, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, bool nullable = false, System.Type? graphType = null, bool addIdArgument = true, System.Collections.Generic.IEnumerable<GraphQL.Types.QueryArgument>? arguments = null)
+            where TReturn :  class { }
+    }
+    public static class QueryableExtensions
+    {
+        public static System.Threading.Tasks.Task<System.Collections.Generic.IList<GraphQL.Linq.GraphApi.EfSource<T>>> ToGraphAsync<T>(this System.Linq.IQueryable<T> query)
+            where T :  class { }
+        public static System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<T>>> ToGraphConnectionAsync<T>(this System.Linq.IQueryable<T> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100)
+            where T :  class { }
+        public static GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ToGraphDelayed<TParentKey, TReturn>(this System.Linq.IQueryable<TReturn> query, TParentKey parentKey, System.Linq.Expressions.Expression<System.Func<TReturn, TParentKey>> keySelector, [System.Runtime.CompilerServices.CallerFilePath] string callerFilePath = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+            where TReturn :  class { }
+        public static GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ToGraphDelayed<TParentKey, TObject, TReturn>(this System.Linq.IQueryable<TObject> query, TParentKey parentKey, System.Linq.Expressions.Expression<System.Func<TObject, TParentKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, [System.Runtime.CompilerServices.CallerFilePath] string callerFilePath = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+            where TObject :  class
+            where TReturn :  class { }
+        public static System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<T>> ToGraphSingleAsync<T>(this System.Linq.IQueryable<T> query)
+            where T :  class { }
+        public static System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<T>> ToGraphSingleAsync<T>(this System.Linq.IQueryable<T> query, System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)
+            where T :  class { }
+        public static GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>> ToGraphSingleDelayed<TKey, TReturn>(this System.Linq.IQueryable<TReturn> query, TKey key, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector, [System.Runtime.CompilerServices.CallerFilePath] string callerFilePath = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+            where TReturn :  class { }
+        public static GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>> ToGraphSingleDelayed<TKey, TObject, TReturn>(this System.Linq.IQueryable<TObject> query, TKey key, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, [System.Runtime.CompilerServices.CallerFilePath] string callerFilePath = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+            where TObject :  class
+            where TReturn :  class { }
+        public static System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<T>?> ToGraphSingleOrDefaultAsync<T>(this System.Linq.IQueryable<T> query)
+            where T :  class { }
+        public static System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<T>?> ToGraphSingleOrDefaultAsync<T>(this System.Linq.IQueryable<T> query, System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)
+            where T :  class { }
+        public static GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>?> ToGraphSingleOrDefaultDelayed<TKey, TReturn>(this System.Linq.IQueryable<TReturn> query, TKey key, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector, [System.Runtime.CompilerServices.CallerFilePath] string callerFilePath = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+            where TReturn :  class { }
+        public static GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>?> ToGraphSingleOrDefaultDelayed<TKey, TObject, TReturn>(this System.Linq.IQueryable<TObject> query, TKey key, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector, [System.Runtime.CompilerServices.CallerFilePath] string callerFilePath = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
+            where TObject :  class
+            where TReturn :  class { }
+    }
+    public class ResolveEfConnectionContext<TDbContext, TSource> : GraphQL.Linq.ResolveEfFieldContext<TDbContext, TSource>, GraphQL.Builders.IResolveConnectionContext, GraphQL.Builders.IResolveConnectionContext<TSource>, GraphQL.Execution.IProvideUserContext, GraphQL.IResolveFieldContext, GraphQL.IResolveFieldContext<TSource>, GraphQL.Linq.IResolveEfConnectionContext<TDbContext>, GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource>, GraphQL.Linq.IResolveEfFieldContext<TDbContext>, GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>
+    {
+        public ResolveEfConnectionContext(GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource> baseContext, bool biDirectional, int? defaultPageSize) { }
+        public ResolveEfConnectionContext(GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, GraphQL.IResolveFieldContext baseContext, bool biDirectional, int? defaultPageSize) { }
+        public virtual string? After { get; }
+        public virtual string? Before { get; }
+        public int? DefaultPageSize { get; }
+        public virtual int? First { get; }
+        protected virtual int? FirstInternal { get; }
+        public bool IsUnidirectional { get; }
+        public virtual int? Last { get; }
+        protected virtual int? LastInternal { get; }
+        public virtual int? PageSize { get; }
+    }
+    public class ResolveEfFieldContext<TDbContext, TSource> : GraphQL.Execution.IProvideUserContext, GraphQL.IResolveFieldContext, GraphQL.IResolveFieldContext<TSource>, GraphQL.Linq.IResolveEfFieldContext<TDbContext>, GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>
+    {
+        public ResolveEfFieldContext(GraphQL.IResolveFieldContext baseContext, GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService) { }
+        public System.Collections.Generic.IDictionary<string, GraphQL.Execution.ArgumentValue>? Arguments { get; }
+        public GraphQL.Execution.IExecutionArrayPool ArrayPool { get; }
+        protected GraphQL.IResolveFieldContext BaseContext { get; }
+        public System.Threading.CancellationToken CancellationToken { get; }
+        public TDbContext DbContext { get; }
+        public System.Collections.Generic.IDictionary<string, GraphQL.Execution.DirectiveInfo> Directives { get; }
+        public GraphQLParser.AST.GraphQLDocument Document { get; }
+        public GraphQL.Linq.IEfGraphQLService<TDbContext> EfGraphQLService { get; }
+        public GraphQL.ExecutionErrors Errors { get; }
+        public GraphQL.Execution.IExecutionContext ExecutionContext { get; }
+        public GraphQLParser.AST.GraphQLField FieldAst { get; }
+        public GraphQL.Types.FieldType FieldDefinition { get; }
+        public System.Collections.Generic.IReadOnlyDictionary<string, object?> InputExtensions { get; }
+        public GraphQL.Instrumentation.Metrics Metrics { get; }
+        public GraphQLParser.AST.GraphQLOperationDefinition Operation { get; }
+        public System.Collections.Generic.IDictionary<string, object?> OutputExtensions { get; }
+        public GraphQL.IResolveFieldContext? Parent { get; }
+        public GraphQL.Types.IObjectGraphType ParentType { get; }
+        public System.Collections.Generic.IEnumerable<object> Path { get; }
+        public System.IServiceProvider? RequestServices { get; }
+        public System.Collections.Generic.IEnumerable<object> ResponsePath { get; }
+        public object? RootValue { get; }
+        public GraphQL.Types.ISchema Schema { get; }
+        public TSource Source { get; }
+        [System.Runtime.CompilerServices.TupleElementNames(new string[] {
+                "Field",
+                "FieldType"})]
+        public System.Collections.Generic.Dictionary<string, System.ValueTuple<GraphQLParser.AST.GraphQLField, GraphQL.Types.FieldType>>? SubFields { get; }
+        public System.Security.Claims.ClaimsPrincipal? User { get; }
+        public System.Collections.Generic.IDictionary<string, object?> UserContext { get; }
+        public GraphQL.Validation.Variables Variables { get; }
+    }
+}
+namespace GraphQL.Linq.ConnectionResolvers
+{
+    public class EfSimpleConnectionResolver<TDbContext, TObjectType> : GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TObjectType>
+        where TObjectType :  class
+    {
+        public EfSimpleConnectionResolver(int? defaultPageSize) { }
+        public virtual int? DefaultPageSize { get; }
+        public virtual bool IsBidirectional { get; }
+        public virtual void ConfigureConnectionField(GraphQL.Types.FieldType fieldType) { }
+        public virtual System.Linq.Expressions.Expression<System.Func<T, int>> CountExpression<T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, object> context, System.Linq.Expressions.Expression<System.Func<T, System.Collections.Generic.IEnumerable<TObjectType>>> expression)
+            where T :  class { }
+        public virtual System.Threading.Tasks.Task<int> CountQueryable<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context, System.Linq.IQueryable<TObjectType> query) { }
+        public virtual System.Linq.Expressions.Expression<System.Func<T, System.Collections.Generic.IEnumerable<TObjectType>>> FilterExpression<T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, object> context, System.Linq.Expressions.Expression<System.Func<T, System.Collections.Generic.IEnumerable<TObjectType>>> expression)
+            where T :  class { }
+        public virtual System.Linq.IQueryable<TObjectType> FilterQueryable<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context, System.Linq.IQueryable<TObjectType> query) { }
+        public virtual System.Linq.Expressions.Expression<System.Func<TObjectType, object>>? GetCursorExpression<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context) { }
+        [return: System.Runtime.CompilerServices.TupleElementNames(new string[] {
+                "skip",
+                "pageSize"})]
+        protected virtual System.ValueTuple<int, int?> GetStartIndex<T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, T> context) { }
+        public virtual System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<T>> ResolveConnectionObject<TSource, T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context, [System.Runtime.CompilerServices.TupleElementNames(new string[] {
+                "cursor",
+                "node"})] System.Collections.Generic.IList<System.ValueTuple<string, T>>? items, System.Func<System.Threading.Tasks.Task<int>>? countFunction) { }
+        public virtual string SerializeCursor<T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, T> context, int index, object? value) { }
+        public virtual void ValidateArguments<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context) { }
+    }
+    public interface IEfConnectionResolver<TDbContext, TObjectType>
+        where TObjectType :  class
+    {
+        int? DefaultPageSize { get; }
+        bool IsBidirectional { get; }
+        void ConfigureConnectionField(GraphQL.Types.FieldType fieldType);
+        System.Linq.Expressions.Expression<System.Func<T, int>> CountExpression<T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, object> context, System.Linq.Expressions.Expression<System.Func<T, System.Collections.Generic.IEnumerable<TObjectType>>> expression)
+            where T :  class;
+        System.Threading.Tasks.Task<int> CountQueryable<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context, System.Linq.IQueryable<TObjectType> query);
+        System.Linq.Expressions.Expression<System.Func<T, System.Collections.Generic.IEnumerable<TObjectType>>> FilterExpression<T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, object> context, System.Linq.Expressions.Expression<System.Func<T, System.Collections.Generic.IEnumerable<TObjectType>>> expression)
+            where T :  class;
+        System.Linq.IQueryable<TObjectType> FilterQueryable<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context, System.Linq.IQueryable<TObjectType> query);
+        System.Linq.Expressions.Expression<System.Func<TObjectType, object>>? GetCursorExpression<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context);
+        System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<T>> ResolveConnectionObject<TSource, T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context, [System.Runtime.CompilerServices.TupleElementNames(new string[] {
+                "cursor",
+                "node"})] System.Collections.Generic.IList<System.ValueTuple<string, T>>? items, System.Func<System.Threading.Tasks.Task<int>>? countFunction);
+        string SerializeCursor<T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, T> context, int index, object? value);
+        void ValidateArguments<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context);
+    }
+}
+namespace GraphQL.Linq.DataLoaders
+{
+    public class EfEntityDataLoader<TKey, TReturn> : GraphQL.Linq.DataLoaders.EfEntityDataLoader<TKey, TReturn, TReturn>
+        where TReturn :  class
+    {
+        public EfEntityDataLoader(System.Linq.IQueryable<TReturn> query, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector) { }
+    }
+    [System.Runtime.CompilerServices.TupleElementNames(new string[] {
+            "Context",
+            "Key"})]
+    public class EfEntityDataLoader<TKey, TObject, TReturn> : GraphQL.DataLoader.DataLoaderBase<System.ValueTuple<GraphQL.IResolveFieldContext, TKey>, GraphQL.Linq.GraphApi.EfSource<TReturn>>
+        where TObject :  class
+        where TReturn :  class
+    {
+        public EfEntityDataLoader(System.Linq.IQueryable<TObject> query, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector) { }
+        protected override System.Threading.Tasks.Task FetchAsync([System.Runtime.CompilerServices.TupleElementNames(new string[] {
+                "Context",
+                "Key"})] System.Collections.Generic.IEnumerable<GraphQL.DataLoader.DataLoaderPair<System.ValueTuple<GraphQL.IResolveFieldContext, TKey>, GraphQL.Linq.GraphApi.EfSource<TReturn>>> list, System.Threading.CancellationToken cancellationToken) { }
+        public virtual GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>> LoadAsync(GraphQL.IResolveFieldContext context, TKey key) { }
+    }
+    public class EfEntityDataLoader<TDbContext, TKey, TContextSource, TReturn> : GraphQL.Linq.DataLoaders.EfEntityDataLoader<TDbContext, TKey, TContextSource, TReturn, TReturn>
+        where TReturn :  class
+    {
+        public EfEntityDataLoader(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TContextSource>, System.Linq.IQueryable<TReturn>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector) { }
+        public EfEntityDataLoader(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TContextSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> keySelector) { }
+    }
+    [System.Runtime.CompilerServices.TupleElementNames(new string[] {
+            "Context",
+            "Key"})]
+    public class EfEntityDataLoader<TDbContext, TKey, TContextSource, TObject, TReturn> : GraphQL.DataLoader.DataLoaderBase<System.ValueTuple<GraphQL.IResolveFieldContext, TKey>, GraphQL.Linq.GraphApi.EfSource<TReturn>>
+        where TObject :  class
+        where TReturn :  class
+    {
+        public EfEntityDataLoader(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TContextSource>, System.Linq.IQueryable<TObject>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector) { }
+        public EfEntityDataLoader(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TContextSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TObject>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector) { }
+        protected override System.Threading.Tasks.Task FetchAsync([System.Runtime.CompilerServices.TupleElementNames(new string[] {
+                "Context",
+                "Key"})] System.Collections.Generic.IEnumerable<GraphQL.DataLoader.DataLoaderPair<System.ValueTuple<GraphQL.IResolveFieldContext, TKey>, GraphQL.Linq.GraphApi.EfSource<TReturn>>> list, System.Threading.CancellationToken cancellationToken) { }
+        public virtual GraphQL.DataLoader.IDataLoaderResult<GraphQL.Linq.GraphApi.EfSource<TReturn>> LoadAsync(GraphQL.IResolveFieldContext context, TKey key) { }
+    }
+    public class EfEntityListDataLoader<TParentKey, TReturn> : GraphQL.Linq.DataLoaders.EfEntityListDataLoader<TParentKey, TReturn, TReturn>
+        where TReturn :  class
+    {
+        public EfEntityListDataLoader(System.Linq.IQueryable<TReturn> query, System.Linq.Expressions.Expression<System.Func<TReturn, TParentKey>> keySelector) { }
+    }
+    [System.Runtime.CompilerServices.TupleElementNames(new string[] {
+            "Context",
+            "Key"})]
+    public class EfEntityListDataLoader<TParentKey, TObject, TReturn> : GraphQL.DataLoader.DataLoaderBase<System.ValueTuple<GraphQL.IResolveFieldContext, TParentKey>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>
+        where TObject :  class
+        where TReturn :  class
+    {
+        public EfEntityListDataLoader(System.Linq.IQueryable<TObject> query, System.Linq.Expressions.Expression<System.Func<TObject, TParentKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector) { }
+        protected override System.Threading.Tasks.Task FetchAsync([System.Runtime.CompilerServices.TupleElementNames(new string[] {
+                "Context",
+                "Key"})] System.Collections.Generic.IEnumerable<GraphQL.DataLoader.DataLoaderPair<System.ValueTuple<GraphQL.IResolveFieldContext, TParentKey>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> list, System.Threading.CancellationToken cancellationToken) { }
+        public virtual GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> LoadAsync(GraphQL.IResolveFieldContext context, TParentKey key) { }
+    }
+    public class EfEntityListDataLoader<TDbContext, TParentKey, TContextSource, TReturn> : GraphQL.Linq.DataLoaders.EfEntityListDataLoader<TDbContext, TParentKey, TContextSource, TReturn, TReturn>
+        where TReturn :  class
+    {
+        public EfEntityListDataLoader(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TContextSource>, System.Linq.IQueryable<TReturn>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TParentKey>> keySelector) { }
+        public EfEntityListDataLoader(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TContextSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TReturn, TParentKey>> keySelector) { }
+    }
+    [System.Runtime.CompilerServices.TupleElementNames(new string[] {
+            "Context",
+            "Key"})]
+    public class EfEntityListDataLoader<TDbContext, TParentKey, TContextSource, TObject, TReturn> : GraphQL.DataLoader.DataLoaderBase<System.ValueTuple<GraphQL.IResolveFieldContext, TParentKey>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>
+        where TObject :  class
+        where TReturn :  class
+    {
+        public EfEntityListDataLoader(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TContextSource>, System.Linq.IQueryable<TObject>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TParentKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector) { }
+        public EfEntityListDataLoader(System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TContextSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TObject>>> baseQueryFunc, System.Linq.Expressions.Expression<System.Func<TObject, TParentKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector) { }
+        protected override System.Threading.Tasks.Task FetchAsync([System.Runtime.CompilerServices.TupleElementNames(new string[] {
+                "Context",
+                "Key"})] System.Collections.Generic.IEnumerable<GraphQL.DataLoader.DataLoaderPair<System.ValueTuple<GraphQL.IResolveFieldContext, TParentKey>, System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>>> list, System.Threading.CancellationToken cancellationToken) { }
+        public virtual GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> LoadAsync(GraphQL.IResolveFieldContext context, TParentKey key) { }
+    }
+}
+namespace GraphQL.Linq.Expressions
+{
+    public static class LambdaBuilder
+    {
+        public static System.Linq.Expressions.Expression<System.Func<T, GraphQL.Linq.GraphApi.EfSource<T>>> Build<T>(System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string, System.Linq.Expressions.Expression<System.Func<T, object>>>> fields)
+            where T :  class { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, object>> BuildNavigation<TSource, TItem>(System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TItem>>> mediasSelector, System.Linq.Expressions.Expression<System.Func<TItem, GraphQL.Linq.GraphApi.EfSource<TItem>>> mediasExp)
+            where TItem :  class { }
+    }
+    public static class LinqExpressions
+    {
+        public static System.Linq.Expressions.Expression<System.Func<T, bool>> And<T>(this System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression<System.Func<T, bool>>> predicates) { }
+        public static System.Linq.Expressions.Expression<System.Func<T, bool>> And<T>(this System.Linq.Expressions.Expression<System.Func<T, bool>> predicate1, System.Linq.Expressions.Expression<System.Func<T, bool>> predicate2) { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, int>> Count<TSource, TReturn>(this System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> sourceQuery) { }
+        public static bool EndsWithFirstOrDefault(this System.Linq.Expressions.LambdaExpression expression, out System.Linq.Expressions.LambdaExpression? ret) { }
+        public static System.Linq.Expressions.Expression<System.Func<T, bool>> Not<T>(this System.Linq.Expressions.Expression<System.Func<T, bool>> predicate) { }
+        public static System.Linq.Expressions.Expression<System.Func<T, bool>> Or<T>(this System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression<System.Func<T, bool>>> predicates) { }
+        public static System.Linq.Expressions.Expression<System.Func<T, bool>> Or<T>(this System.Linq.Expressions.Expression<System.Func<T, bool>> predicate1, System.Linq.Expressions.Expression<System.Func<T, bool>> predicate2) { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> OrderBy<TSource, TReturn, TKey>(this System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> sourceQuery, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> orderByQuery) { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> OrderByDescending<TSource, TReturn, TKey>(this System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> sourceQuery, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> orderByQuery) { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> Skip<TSource, TReturn>(this System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> sourceQuery, int count) { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> Take<TSource, TReturn>(this System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> sourceQuery, int count) { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> ThenBy<TSource, TReturn, TKey>(this System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> sourceQuery, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> thenByQuery) { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> ThenByDescending<TSource, TReturn, TKey>(this System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> sourceQuery, System.Linq.Expressions.Expression<System.Func<TReturn, TKey>> thenByQuery) { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> Where<TSource, TReturn>(this System.Linq.Expressions.Expression<System.Func<TSource, System.Collections.Generic.IEnumerable<TReturn>>> sourceQuery, System.Linq.Expressions.Expression<System.Func<TReturn, bool>> whereQuery) { }
+    }
+    public static class ParameterReplacer
+    {
+        public static System.Linq.Expressions.LambdaExpression Chain(System.Linq.Expressions.LambdaExpression parentExpression, System.Linq.Expressions.LambdaExpression childExpression) { }
+        public static System.Linq.Expressions.Expression<System.Func<TSource, TResult>> ChainWith<TSource, TIntermediate, TResult>(this System.Linq.Expressions.Expression<System.Func<TSource, TIntermediate>> parentExpression, System.Linq.Expressions.Expression<System.Func<TIntermediate, TResult>> childExpression) { }
+        public static System.Linq.Expressions.Expression Replace(this System.Linq.Expressions.Expression expression, System.Linq.Expressions.ParameterExpression oldParameter, System.Linq.Expressions.Expression newBody) { }
+    }
+}
+namespace GraphQL.Linq.FieldResolvers
+{
+    public class QueryConnectionResolver<TDbContext, TSource, TReturn> : GraphQL.Linq.GraphApi.QueryExecuter<TDbContext, TReturn>, GraphQL.Resolvers.IFieldResolver
+        where TReturn :  class
+    {
+        public QueryConnectionResolver(GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> efConnectionResolver) { }
+        protected GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> EfConnectionResolver { get; }
+        protected GraphQL.Linq.IEfGraphQLService<TDbContext> EfGraphQLService { get; }
+        protected System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> Resolver { get; }
+        public virtual System.Threading.Tasks.ValueTask<object?> ResolveAsync(GraphQL.IResolveFieldContext context) { }
+        public virtual System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ResolveAsync(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> connectionContext) { }
+    }
+    public class QueryResolver<TDbContext, TSource, TReturn> : GraphQL.Linq.GraphApi.QueryExecuter<TDbContext, TReturn>, GraphQL.Resolvers.IFieldResolver
+        where TReturn :  class
+    {
+        public QueryResolver(GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve) { }
+        protected GraphQL.Linq.IEfGraphQLService<TDbContext> EfGraphQLService { get; }
+        protected System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> Resolver { get; }
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.IList<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ResolveAsync(GraphQL.IResolveFieldContext context) { }
+        protected virtual System.Threading.Tasks.Task<System.Linq.IQueryable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ResolveQueryAsync(GraphQL.IResolveFieldContext context) { }
+    }
+    public class SingleQueryResolver<TDbContext, TSource, TReturn> : GraphQL.Linq.GraphApi.QueryExecuter<TDbContext, TReturn>, GraphQL.Resolvers.IFieldResolver
+        where TReturn :  class
+    {
+        public SingleQueryResolver(GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> resolve, bool orDefault) { }
+        protected GraphQL.Linq.IEfGraphQLService<TDbContext> EfGraphQLService { get; }
+        protected bool OrDefault { get; }
+        protected System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, TSource>, System.Threading.Tasks.Task<System.Linq.IQueryable<TReturn>>> Resolver { get; }
+        public virtual System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<TReturn>?> ResolveAsync(GraphQL.IResolveFieldContext context) { }
+        protected virtual System.Threading.Tasks.Task<System.Linq.IQueryable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ResolveQueryAsync(GraphQL.IResolveFieldContext context) { }
+    }
+}
+namespace GraphQL.Linq.GraphApi
+{
+    public class EfSource<T> : System.Collections.Generic.Dictionary<string, object?>
+        where T :  class
+    {
+        public EfSource() { }
+    }
+    public interface IEfDbContextTypeProvider
+    {
+        System.Type? GetDbContextType(System.Linq.IQueryable queryable);
+    }
+    public interface IEfDbPrimaryKeyNamesProvider<TDbContext>
+    {
+        System.Linq.Expressions.Expression<System.Func<TSource, object>> GetDummyExpression<TSource>();
+        System.Collections.Generic.IEnumerable<string> GetPrimaryKeyNames<TModel>();
+    }
+    public interface ILinqGraphExecuter
+    {
+        System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100)
+            where TReturn :  class;
+        System.Threading.Tasks.Task<System.Collections.Generic.IList<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteQueryAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
+            where TReturn :  class;
+        System.Threading.Tasks.Task<System.Collections.Generic.IList<System.Tuple<TKey, GraphQL.Linq.GraphApi.EfSource<TReturn>>>> ExecuteQueryForKeysAsync<TKey, TObject, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TObject> query, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Collections.Generic.IEnumerable<TKey> keys, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector)
+            where TObject :  class
+            where TReturn :  class;
+        System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<TReturn>> ExecuteSingleAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
+            where TReturn :  class;
+        System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<TReturn>?> ExecuteSingleOrDefaultAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
+            where TReturn :  class;
+    }
+    public interface ILinqGraphExecuter<TDbContext> : GraphQL.Linq.GraphApi.ILinqGraphExecuter { }
+    public sealed class LinqGraphExecuter : GraphQL.Linq.GraphApi.ILinqGraphExecuter
+    {
+        public LinqGraphExecuter(GraphQL.Linq.GraphApi.IEfDbContextTypeProvider dbContextTypeProvider) { }
+        public System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100)
+            where TReturn :  class { }
+        public System.Threading.Tasks.Task<System.Collections.Generic.IList<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteQueryAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
+            where TReturn :  class { }
+        public System.Threading.Tasks.Task<System.Collections.Generic.IList<System.Tuple<TKey, GraphQL.Linq.GraphApi.EfSource<TReturn>>>> ExecuteQueryForKeysAsync<TKey, TObject, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TObject> query, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Collections.Generic.IEnumerable<TKey> keys, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector)
+            where TObject :  class
+            where TReturn :  class { }
+        public System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<TReturn>> ExecuteSingleAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
+            where TReturn :  class { }
+        public System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<TReturn>?> ExecuteSingleOrDefaultAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
+            where TReturn :  class { }
+    }
+    public sealed class LinqGraphExecuter<TDbContext> : GraphQL.Linq.GraphApi.ILinqGraphExecuter, GraphQL.Linq.GraphApi.ILinqGraphExecuter<TDbContext>
+    {
+        public LinqGraphExecuter(GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService) { }
+        public System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100)
+            where TReturn :  class { }
+        public System.Threading.Tasks.Task<System.Collections.Generic.IList<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteQueryAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
+            where TReturn :  class { }
+        public System.Threading.Tasks.Task<System.Collections.Generic.IList<System.Tuple<TKey, GraphQL.Linq.GraphApi.EfSource<TReturn>>>> ExecuteQueryForKeysAsync<TKey, TObject, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TObject> query, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Collections.Generic.IEnumerable<TKey> keys, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector)
+            where TObject :  class
+            where TReturn :  class { }
+        public System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<TReturn>> ExecuteSingleAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
+            where TReturn :  class { }
+        public System.Threading.Tasks.Task<GraphQL.Linq.GraphApi.EfSource<TReturn>?> ExecuteSingleOrDefaultAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
+            where TReturn :  class { }
+    }
+    public class QueryExecuter<TDbContext, TReturn>
+        where TReturn :  class
+    {
+        public QueryExecuter() { }
+        protected virtual GraphQL.Linq.IResolveEfFieldContext<TDbContext, object?> CreateChildEfFieldContext(GraphQL.Linq.IResolveEfFieldContext<TDbContext> context, GraphQLParser.AST.GraphQLField field, GraphQL.Types.FieldType type, GraphQL.Types.IObjectGraphType parentType, System.Collections.Generic.IDictionary<string, GraphQL.Execution.ArgumentValue> arguments, System.Collections.Generic.IEnumerable<object> path) { }
+        protected virtual System.Linq.Expressions.Expression<System.Func<TObjectType, object>> CreateConnectionExpressionForSubField<TObjectType>(GraphQL.Linq.IResolveEfFieldContext<TDbContext, object?> context, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object?>, System.Linq.Expressions.LambdaExpression> resolveExpressionResolver, System.Type subFieldEfType, object connectionResolver) { }
+        protected virtual System.Linq.Expressions.Expression<System.Func<TObjectType, object>> CreateConnectionExpressionForSubFieldTyped<TObjectType, TChildType>(GraphQL.Linq.IResolveEfFieldContext<TDbContext, object> context, System.Func<GraphQL.Linq.IResolveEfFieldContext<TDbContext, object>, System.Linq.Expressions.LambdaExpression> resolveExpressionResolver, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TChildType> connectionResolver)
+            where TObjectType :  class
+            where TChildType :  class { }
+        protected virtual System.Linq.Expressions.Expression<System.Func<TObjectType, GraphQL.Linq.GraphApi.EfSource<TObjectType>>> CreateConnectionSelectArgument<TContextSource, TObjectType>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TContextSource> context, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TObjectType> resolver)
+            where TObjectType :  class { }
+        protected virtual System.Linq.Expressions.Expression<System.Func<TParentType, object>> CreateObject<TParentType>(System.Type tObjectType, GraphQL.Linq.IResolveEfFieldContext<TDbContext, object?> context, System.Linq.Expressions.LambdaExpression selector) { }
+        protected virtual System.Linq.Expressions.Expression<System.Func<TParentType, object>> CreateObjectInternal<TParentType, TObjectType>(GraphQL.Linq.IResolveEfFieldContext<TDbContext, object> context, System.Linq.Expressions.LambdaExpression selector)
+            where TObjectType :  class { }
+        protected virtual System.Linq.Expressions.Expression<System.Func<TObjectType, GraphQL.Linq.GraphApi.EfSource<TObjectType>>> CreateSelectArgument<TObjectType>(GraphQL.Linq.IResolveEfFieldContext<TDbContext> context)
+            where TObjectType :  class { }
+        protected virtual System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<string, System.Linq.Expressions.Expression<System.Func<TObjectType, object>>>> CreateSelectArgumentDictionary<TObjectType>(GraphQL.Linq.IResolveEfFieldContext<TDbContext> context)
+            where TObjectType :  class { }
+        protected virtual System.Linq.Expressions.Expression<System.Func<TParentType, object>> CreateSelectQuery<TParentType>(System.Type tObjectType, GraphQL.Linq.IResolveEfFieldContext<TDbContext, object?> context, System.Linq.Expressions.LambdaExpression selector) { }
+        protected virtual System.Linq.Expressions.Expression<System.Func<TParentType, object>> CreateSelectQueryInternal<TParentType, TObjectType>(GraphQL.Linq.IResolveEfFieldContext<TDbContext, object> context, System.Linq.Expressions.LambdaExpression selector)
+            where TObjectType :  class { }
+        protected virtual System.Linq.Expressions.Expression<System.Func<TObject, System.Tuple<TKey, GraphQL.Linq.GraphApi.EfSource<TReturn>>>> CreateSelectWithKey<TKey, TObject>(System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Linq.Expressions.Expression<System.Func<TObject, GraphQL.Linq.GraphApi.EfSource<TReturn>>> valueSelector) { }
+        public virtual System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> connectionContext, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TReturn> resolver, System.Linq.IQueryable<TReturn> query) { }
+        protected virtual bool FindSubField<TObjectType>(GraphQL.Linq.IResolveEfFieldContext<TDbContext> context, string name, out GraphQL.Linq.IResolveEfFieldContext<TDbContext, object?> subContext)
+            where TObjectType :  class { }
+        protected virtual System.Linq.Expressions.LambdaExpression FirstOrDefault(System.Linq.Expressions.LambdaExpression expression) { }
+        public virtual System.Linq.IQueryable<GraphQL.Linq.GraphApi.EfSource<TReturn>> GenerateQuery(GraphQL.Linq.IResolveEfFieldContext<TDbContext> efContext, System.Linq.IQueryable<TReturn> baseQuery) { }
+        public virtual System.Linq.IQueryable<System.Tuple<TKey, GraphQL.Linq.GraphApi.EfSource<TReturn>>> GenerateQueryForKeys<TKey, TObject>(GraphQL.Linq.IResolveEfFieldContext<TDbContext> efContext, System.Linq.IQueryable<TObject> baseQuery, System.Linq.Expressions.Expression<System.Func<TObject, TKey>> keySelector, System.Collections.Generic.IEnumerable<TKey> keys, System.Linq.Expressions.Expression<System.Func<TObject, TReturn>> itemSelector) { }
+        protected virtual bool TryGetObjectGraphType<TObjectType>(GraphQL.Types.IGraphType graphType, out GraphQL.Types.IObjectGraphType complexGraph)
+            where TObjectType :  class { }
+    }
+}

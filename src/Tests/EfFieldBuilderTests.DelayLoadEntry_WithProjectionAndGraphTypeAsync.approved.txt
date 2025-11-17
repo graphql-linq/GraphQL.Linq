@@ -1,0 +1,11 @@
+{
+  "data": {
+    "product": {
+      "delayLoadEntryWithProjectionAndGraphTypeAsync": {
+        "id": 1,
+        "username": "admin",
+        "email": "admin@techmart.com"
+      }
+    }
+  }
+}

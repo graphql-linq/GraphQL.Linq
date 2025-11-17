@@ -1,0 +1,16 @@
+{
+  "data": {
+    "p1": {
+      "id": 1,
+      "name": "UltraBook Pro 15"
+    },
+    "p2": {
+      "id": 2,
+      "name": "Wireless Mouse"
+    },
+    "p3": {
+      "id": 3,
+      "name": "USB-C Hub"
+    }
+  }
+}

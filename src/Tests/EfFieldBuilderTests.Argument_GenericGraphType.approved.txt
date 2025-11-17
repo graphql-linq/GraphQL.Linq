@@ -1,0 +1,7 @@
+{
+  "data": {
+    "product": {
+      "argumentGenericGraphType": "UltraBook Pro 15"
+    }
+  }
+}

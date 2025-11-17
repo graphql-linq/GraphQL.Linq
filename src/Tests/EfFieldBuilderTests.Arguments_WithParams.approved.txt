@@ -1,0 +1,7 @@
+{
+  "data": {
+    "product": {
+      "argumentsWithParams": "UltraBook Pro 15"
+    }
+  }
+}

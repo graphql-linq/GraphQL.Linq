@@ -1,0 +1,8 @@
+{
+  "data": {
+    "product": {
+      "description": "High-performance laptop with 16GB RAM and 512GB SSD",
+      "nullableDescription": "High-performance laptop with 16GB RAM and 512GB SSD"
+    }
+  }
+}
