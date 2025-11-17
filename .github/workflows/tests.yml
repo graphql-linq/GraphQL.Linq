@@ -83,4 +83,3 @@ jobs:
           file: ./Cobertura.xml
           format: cobertura
           base-path: .
-          debug: true
