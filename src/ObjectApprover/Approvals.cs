@@ -40,7 +40,6 @@ public static class Approvals
         ShouldMatchApproved(received, _ => { }, sourceFilePath, memberName);
     }
 
-    private static readonly ConcurrentDictionary<string, object> _approvalFileLocks = new();
     public static void ShouldMatchApproved(this string received, Action<ShouldMatchApprovedOptions> configurator, [CallerFilePath] string sourceFilePath = "", [CallerMemberName] string memberName = "")
     {
         var options = new ShouldMatchApprovedOptions();
@@ -51,50 +50,57 @@ public static class Approvals
         var sourceFileName = Path.GetFileNameWithoutExtension(sourceFilePath);
 
         // Construct approved and received file paths
-        var discriminator = string.IsNullOrEmpty(options.Discriminator) ? "" : $".{new string(options.Discriminator.Where(c => char.IsLetterOrDigit(c) || c == '.').ToArray())}";
+        var discriminator = string.IsNullOrEmpty(options.Discriminator) ? "" : $".{new string([.. options.Discriminator.Where(c => char.IsLetterOrDigit(c) || c == '.')])}";
         var approvedFile = Path.Combine(directory, $"{sourceFileName}.{memberName}{discriminator}.approved.txt");
         var receivedFile = Path.Combine(directory, $"{sourceFileName}.{memberName}{discriminator}.received.txt");
 
-        // Ensure thread-safe access per approval file (as some test files, and hence approval files, are shared across projects)
-        var fileLock = _approvalFileLocks.GetOrAdd(approvedFile, _ => new object());
-        lock (fileLock) {
-            // Normalize line endings to \r\n for consistency
-            var normalizedReceived = received.Replace("\r\n", "\n").Replace("\n", "\r\n");
+        // Normalize line endings to \r\n for consistency
+        var normalizedReceived = received.Replace("\r\n", "\n").Replace("\n", "\r\n");
 
+        // Check if approved file exists
+        if (!File.Exists(approvedFile)) {
+#if CI
+            throw new InvalidOperationException($"""
+                Approved file not found: {approvedFile}
+                Received content written to: {receivedFile}
+                """);
+#else
+            // In local development, write the new content to the approval file
+            File.WriteAllText(approvedFile, normalizedReceived);
+            return;
+#endif
+        }
+
+        // Read and normalize approved content
+        var approved = File.ReadAllText(approvedFile);
+        var normalizedApproved = approved.Replace("\r\n", "\n").Replace("\n", "\r\n");
+
+        // Compare the contents
+        if (normalizedApproved != normalizedReceived) {
+#if !CI
             // Write the received content
             File.WriteAllText(receivedFile, normalizedReceived);
-
-            // Check if approved file exists
-            if (!File.Exists(approvedFile)) {
-#if CI
-            throw new InvalidOperationException($"Approved file not found: {approvedFile}\nReceived content written to: {receivedFile}");
-#else
-                // In local development, copy received to approved
-                File.Copy(receivedFile, approvedFile, overwrite: true);
-                return;
 #endif
-            }
 
-            // Read and normalize approved content
-            var approved = File.ReadAllText(approvedFile);
-            var normalizedApproved = approved.Replace("\r\n", "\n").Replace("\n", "\r\n");
+            // Throw an exception with diff context
+            var diffContext = GetDiffContext(normalizedApproved, normalizedReceived);
+            var message = $"""
+                Approval test failed for {memberName}
+                Approved file: {approvedFile}
+                Received file: {receivedFile}
+                The received content does not match the approved content.
 
-            // Compare the contents
-            if (normalizedApproved != normalizedReceived) {
-                var diffContext = GetDiffContext(normalizedApproved, normalizedReceived);
-                var message = $"Approval test failed for {memberName}\n" +
-                             $"Approved file: {approvedFile}\n" +
-                             $"Received file: {receivedFile}\n" +
-                             $"The received content does not match the approved content.\n" +
-                             diffContext;
-                throw new InvalidOperationException(message);
-            }
-
-            // If they match, delete the received file
-            if (File.Exists(receivedFile)) {
-                File.Delete(receivedFile);
-            }
+                {diffContext}
+                """;
+            throw new InvalidOperationException(message);
         }
+
+#if !CI
+        // If they match, delete the received file
+        if (File.Exists(receivedFile)) {
+            File.Delete(receivedFile);
+        }
+#endif
     }
 
     private static string GetDiffContext(string approved, string received)
@@ -126,8 +132,10 @@ public static class Approvals
         approvedContext = approvedContext.Replace("\r", "\\r").Replace("\n", "\\n").Replace("\t", "\\t");
         receivedContext = receivedContext.Replace("\r", "\\r").Replace("\n", "\\n").Replace("\t", "\\t");
 
-        return $"\nDifference at position {diffIndex}:\n" +
-               $"Expected: ...{approvedContext}...\n" +
-               $"Actual:   ...{receivedContext}...";
+        return $"""
+            Difference at position {diffIndex}:
+            Expected: ...{approvedContext}...
+            Actual:   ...{receivedContext}...
+            """;
     }
 }
