@@ -1,5 +1,6 @@
 // © 2025 American Community Developers, Inc. All Rights Reserved. See LICENSE.txt for details.
 
+using GraphQL.Linq.ConnectionResolvers;
 using GraphQL.Types.Relay.DataObjects;
 
 namespace GraphQL.Linq.GraphApi;
@@ -55,6 +56,21 @@ public interface ILinqGraphExecuter
     /// <param name="defaultPageSize">The default page size to use for pagination if none is specified in the request.</param>
     /// <returns>A task that represents the asynchronous operation, containing a connection with paginated results with only the requested fields wrapped in <see cref="EfSource{T}"/> objects.</returns>
     Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100) where TReturn : class;
+
+    /// <summary>
+    /// Executes a query asynchronously, selecting only the fields requested in the current GraphQL request, and returns paginated results as a Relay-style connection with explicit pagination parameters and a specific connection resolver.
+    /// </summary>
+    /// <typeparam name="TSource">The type of the source object in the GraphQL context.</typeparam>
+    /// <typeparam name="TReturn">The type of the objects returned by the query.</typeparam>
+    /// <param name="context">The GraphQL field resolution context containing the requested fields.</param>
+    /// <param name="query">The LINQ query to execute.</param>
+    /// <param name="first">The number of items to return from the start of the result set.</param>
+    /// <param name="last">The number of items to return from the end of the result set.</param>
+    /// <param name="after">The cursor after which to start returning items.</param>
+    /// <param name="before">The cursor before which to start returning items.</param>
+    /// <param name="connectionResolver">The connection resolver to use for pagination logic.</param>
+    /// <returns>A task that represents the asynchronous operation, containing a connection with paginated results with only the requested fields wrapped in <see cref="EfSource{T}"/> objects.</returns>
+    Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, IEfConnectionResolver<TReturn> connectionResolver) where TReturn : class;
 
     /// <summary>
     /// Executes a query asynchronously for multiple keys with projection, selecting only the fields requested in the current GraphQL request,

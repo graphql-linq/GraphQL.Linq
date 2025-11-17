@@ -6,9 +6,18 @@ using GraphQL.Types.Relay.DataObjects;
 namespace GraphQL.Linq.ConnectionResolvers;
 
 /// <summary>
+/// Marker interface for connection resolvers that can be used without specifying the database context type.
+/// This allows connection resolvers to be passed to methods that don't need to know the specific database context type.
+/// </summary>
+/// <typeparam name="TObjectType">The type of objects in the connection.</typeparam>
+public interface IEfConnectionResolver<TObjectType> where TObjectType : class
+{
+}
+
+/// <summary>
 /// This interface defines methods for resolving GraphQL Relay Connections.
 /// </summary>
-public interface IEfConnectionResolver<TDbContext, TObjectType> where TObjectType : class
+public interface IEfConnectionResolver<TDbContext, TObjectType> : IEfConnectionResolver<TObjectType> where TObjectType : class
 {
     /// <summary>
     /// Configures the connection GraphQL field to include any optional parameters such as a 'where' clause.

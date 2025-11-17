@@ -63,6 +63,24 @@ public static class QueryableExtensions
     }
 
     /// <summary>
+    /// Executes the query as a Relay-style connection with explicit pagination parameters and a specific connection resolver.
+    /// </summary>
+    /// <typeparam name="T">The entity type.</typeparam>
+    /// <param name="query">The IQueryable to execute.</param>
+    /// <param name="first">The number of items to return from the start of the result set.</param>
+    /// <param name="last">The number of items to return from the end of the result set.</param>
+    /// <param name="after">The cursor after which to start returning items.</param>
+    /// <param name="before">The cursor before which to start returning items.</param>
+    /// <param name="connectionResolver">The connection resolver to use for pagination logic.</param>
+    /// <returns>A task that represents the asynchronous operation, containing a Connection of EfSource-wrapped entities.</returns>
+    public static async Task<Connection<EfSource<T>>> ToGraphConnectionAsync<T>(this IQueryable<T> query, int? first, int? last, string? after, string? before, ConnectionResolvers.IEfConnectionResolver<T> connectionResolver)
+        where T : class
+    {
+        var linqGraphExecuter = GetLinqGraphExecuter(out var resolveFieldContext);
+        return await linqGraphExecuter.ExecuteConnectionAsync<object, T>(resolveFieldContext, query, first, last, after, before, connectionResolver);
+    }
+
+    /// <summary>
     /// Executes the query and returns a single EfSource-wrapped result or null if not found.
     /// </summary>
     /// <typeparam name="T">The entity type.</typeparam>

@@ -1,0 +1,42 @@
+{
+  "data": {
+    "productsConnectionWithResolver": {
+      "edges": [
+        {
+          "node": {
+            "id": 1,
+            "name": "UltraBook Pro 15"
+          }
+        },
+        {
+          "node": {
+            "id": 2,
+            "name": "Wireless Mouse"
+          }
+        },
+        {
+          "node": {
+            "id": 3,
+            "name": "USB-C Hub"
+          }
+        },
+        {
+          "node": {
+            "id": 4,
+            "name": "Mechanical Keyboard"
+          }
+        },
+        {
+          "node": {
+            "id": 5,
+            "name": "4K Monitor"
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": true
+      },
+      "totalCount": 6
+    }
+  }
+}

@@ -314,6 +314,8 @@ namespace GraphQL.Linq
     {
         public static System.Threading.Tasks.Task<System.Collections.Generic.IList<GraphQL.Linq.GraphApi.EfSource<T>>> ToGraphAsync<T>(this System.Linq.IQueryable<T> query)
             where T :  class { }
+        public static System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<T>>> ToGraphConnectionAsync<T>(this System.Linq.IQueryable<T> query, int? first, int? last, string? after, string? before, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<T> connectionResolver)
+            where T :  class { }
         public static System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<T>>> ToGraphConnectionAsync<T>(this System.Linq.IQueryable<T> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100)
             where T :  class { }
         public static GraphQL.DataLoader.IDataLoaderResult<System.Collections.Generic.IEnumerable<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ToGraphDelayed<TParentKey, TReturn>(this System.Linq.IQueryable<TReturn> query, TParentKey parentKey, System.Linq.Expressions.Expression<System.Func<TReturn, TParentKey>> keySelector, [System.Runtime.CompilerServices.CallerFilePath] string callerFilePath = "", [System.Runtime.CompilerServices.CallerLineNumber] int callerLineNumber = 0)
@@ -392,7 +394,7 @@ namespace GraphQL.Linq
 }
 namespace GraphQL.Linq.ConnectionResolvers
 {
-    public class EfSimpleConnectionResolver<TDbContext, TObjectType> : GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TObjectType>
+    public class EfSimpleConnectionResolver<TDbContext, TObjectType> : GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TObjectType>, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TDbContext, TObjectType>
         where TObjectType :  class
     {
         public EfSimpleConnectionResolver(int? defaultPageSize) { }
@@ -416,7 +418,9 @@ namespace GraphQL.Linq.ConnectionResolvers
         public virtual string SerializeCursor<T>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, T> context, int index, object? value) { }
         public virtual void ValidateArguments<TSource>(GraphQL.Linq.IResolveEfConnectionContext<TDbContext, TSource> context) { }
     }
-    public interface IEfConnectionResolver<TDbContext, TObjectType>
+    public interface IEfConnectionResolver<TObjectType>
+        where TObjectType :  class { }
+    public interface IEfConnectionResolver<TDbContext, TObjectType> : GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TObjectType>
         where TObjectType :  class
     {
         int? DefaultPageSize { get; }
@@ -598,6 +602,8 @@ namespace GraphQL.Linq.GraphApi
     }
     public interface ILinqGraphExecuter
     {
+        System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query, int? first, int? last, string? after, string? before, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TReturn> connectionResolver)
+            where TReturn :  class;
         System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100)
             where TReturn :  class;
         System.Threading.Tasks.Task<System.Collections.Generic.IList<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteQueryAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
@@ -614,6 +620,8 @@ namespace GraphQL.Linq.GraphApi
     public sealed class LinqGraphExecuter : GraphQL.Linq.GraphApi.ILinqGraphExecuter
     {
         public LinqGraphExecuter(GraphQL.Linq.GraphApi.IEfDbContextTypeProvider dbContextTypeProvider) { }
+        public System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query, int? first, int? last, string? after, string? before, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TReturn> connectionResolver)
+            where TReturn :  class { }
         public System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100)
             where TReturn :  class { }
         public System.Threading.Tasks.Task<System.Collections.Generic.IList<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteQueryAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)
@@ -629,6 +637,8 @@ namespace GraphQL.Linq.GraphApi
     public sealed class LinqGraphExecuter<TDbContext> : GraphQL.Linq.GraphApi.ILinqGraphExecuter, GraphQL.Linq.GraphApi.ILinqGraphExecuter<TDbContext>
     {
         public LinqGraphExecuter(GraphQL.Linq.IEfGraphQLService<TDbContext> efGraphQLService) { }
+        public System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query, int? first, int? last, string? after, string? before, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TReturn> connectionResolver)
+            where TReturn :  class { }
         public System.Threading.Tasks.Task<GraphQL.Types.Relay.DataObjects.Connection<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100)
             where TReturn :  class { }
         public System.Threading.Tasks.Task<System.Collections.Generic.IList<GraphQL.Linq.GraphApi.EfSource<TReturn>>> ExecuteQueryAsync<TReturn>(GraphQL.IResolveFieldContext context, System.Linq.IQueryable<TReturn> query)

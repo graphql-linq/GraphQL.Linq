@@ -62,6 +62,7 @@ type Query {
   productsConnection(after: String, before: String, first: Int, last: Int): ProductConnection!
   productsConnectionCustomPageSize(after: String, before: String, first: Int, last: Int): ProductConnection!
   productsConnectionFiltered(after: String, before: String, first: Int, last: Int, minStock: Int!): ProductConnection!
+  productsConnectionWithResolver(after: String, before: String, first: Int, last: Int): ProductConnection!
   productsFiltered(isActive: Boolean!): [Product!]!
   productWithPredicate(id: ID!): Product!
 }
