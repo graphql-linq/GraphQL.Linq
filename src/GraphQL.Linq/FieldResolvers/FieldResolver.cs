@@ -7,7 +7,7 @@ namespace GraphQL.Linq.FieldResolvers;
 /// <summary>
 /// GraphQL <see cref="IFieldResolver"/> for EF non-connection fields.
 /// </summary>
-internal class FieldResolver : IFieldResolver, IRequiresResolveFieldContextAccessor
+internal sealed class FieldResolver : IFieldResolver, IRequiresResolveFieldContextAccessor
 {
     /// <inheritdoc cref="FieldResolver"/>
     public static readonly FieldResolver Instance = new FieldResolver();
