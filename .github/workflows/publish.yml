@@ -28,8 +28,9 @@ jobs:
         uses: actions/setup-dotnet@v5
         with:
           global-json-file: global.json
+          source-url: https://api.nuget.org/v3/index.json
         env:
-          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NUGET_AUTH_TOKEN: ${{secrets.NUGET_AUTH_TOKEN}}
       - name: Install dependencies
         run: dotnet restore
       - name: Build solution (release config)
@@ -43,13 +44,6 @@ jobs:
         with:
           name: Nuget packages
           path: out/*
-      - name: Use .NET Core SDKs
-        uses: actions/setup-dotnet@v5
-        with:
-          global-json-file: global.json
-          source-url: https://api.nuget.org/v3/index.json
-        env:
-          NUGET_AUTH_TOKEN: ${{secrets.NUGET_AUTH_TOKEN}}
       - name: Publish Nuget packages to Nuget registry
         run: dotnet nuget push "out/*" -k ${{secrets.NUGET_AUTH_TOKEN}}
       - name: Upload nuget packages as release artifacts
