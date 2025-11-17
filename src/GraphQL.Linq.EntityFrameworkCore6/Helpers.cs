@@ -12,6 +12,41 @@ namespace GraphQL.Linq.EntityFrameworkCore6;
 public static class Helpers
 {
     /// <summary>
+    /// Adds GraphQL.Linq services for LinqToDB to the GraphQL builder.
+    /// </summary>
+    public static IGraphQLBuilder AddLinq(this IGraphQLBuilder builder)
+    {
+        if (builder == null)
+            throw new ArgumentNullException(nameof(builder));
+
+        //register the IEfGraphQLService
+        builder.Services.TryRegister(typeof(IEfGraphQLService<>), typeof(EfGraphQLService<>), DI.ServiceLifetime.Singleton);
+
+        //register the ILinqGraphExecuter
+        builder.Services.TryRegister(typeof(ILinqGraphExecuter<>), typeof(LinqGraphExecuter<>), DI.ServiceLifetime.Singleton);
+        builder.Services.TryRegister<ILinqGraphExecuter, LinqGraphExecuter>(DI.ServiceLifetime.Singleton);
+
+        //register the IEfDbPrimaryKeyNamesProvider
+        builder.Services.TryRegister(typeof(IEfDbPrimaryKeyNamesProvider<>), typeof(EfDbPrimaryKeyNamesProvider<>), DI.ServiceLifetime.Singleton);
+
+        //register the IEfDbContextTypeProvider
+        builder.Services.TryRegister<IEfDbContextTypeProvider, EfDbContextTypeProvider>(DI.ServiceLifetime.Singleton);
+
+        //register the connection type
+        builder.Services.TryRegister(typeof(EfConnectionType<>), typeof(EfConnectionType<>), DI.ServiceLifetime.Singleton);
+        builder.Services.TryRegister(typeof(EfEdgeType<>), typeof(EfEdgeType<>), DI.ServiceLifetime.Singleton);
+        builder.AddGraphTypeMappingProvider<EfConnectionMapper>();
+
+        //enable resolve field context accessor
+        builder.AddResolveFieldContextAccessor();
+
+        //enable data loaders
+        builder.AddDataLoader();
+
+        return builder;
+    }
+
+    /// <summary>
     /// Adds GraphQL.Linq services for Entity Framework Core to the GraphQL builder.
     /// </summary>
     public static IGraphQLBuilder AddLinq<TDbContext>(this IGraphQLBuilder builder, Action<GraphQLLinqOptions<TDbContext>>? setupAction = null)
