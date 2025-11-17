@@ -80,6 +80,12 @@ public class QueryableExtensionsTests : QueryTestBase
             return await _dbContext.Products.Where(p => p.StockQuantity > minStock).ToGraphConnectionAsync(first, last, after, before);
         }
 
+        public async Task<Connection<EfSource<Product>>> ProductsConnectionWithResolver(int? first, int? last, string? after, string? before)
+        {
+            var resolver = new GraphQL.Linq.ConnectionResolvers.EfSimpleConnectionResolver<SampleDbContext, Product>(5);
+            return await _dbContext.Products.ToGraphConnectionAsync(first, last, after, before, resolver);
+        }
+
         // ToGraphSingleDelayed tests
         public IDataLoaderResult<EfSource<Product>> ProductDelayed([Id] int id)
         {
@@ -429,6 +435,48 @@ public class QueryableExtensionsTests : QueryTestBase
                         node { id name }
                     }
                     items { id name }
+                }
+            }
+            """);
+        json.ShouldMatchApproved();
+    }
+
+    [TestMethod]
+    public async Task ToGraphConnectionAsync_WithConnectionResolver()
+    {
+        var json = await ExecuteQueryAsync("""
+            {
+                productsConnectionWithResolver(first: 3) {
+                    edges {
+                        node { id name }
+                        cursor
+                    }
+                    pageInfo {
+                        hasNextPage
+                        hasPreviousPage
+                        startCursor
+                        endCursor
+                    }
+                    totalCount
+                }
+            }
+            """);
+        json.ShouldMatchApproved();
+    }
+
+    [TestMethod]
+    public async Task ToGraphConnectionAsync_WithConnectionResolver_CustomPageSize()
+    {
+        var json = await ExecuteQueryAsync("""
+            {
+                productsConnectionWithResolver {
+                    edges {
+                        node { id name }
+                    }
+                    pageInfo {
+                        hasNextPage
+                    }
+                    totalCount
                 }
             }
             """);

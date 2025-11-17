@@ -89,6 +89,18 @@ public class LinqGraphExecuterTests
             });
         }
 
+        public Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TReturn> connectionResolver) where TReturn : class
+        {
+            LastContext = context;
+            LastQuery = query;
+            LastMethodCalled = nameof(ExecuteConnectionAsync) + "_WithResolver";
+            LastAdditionalParameter = new { first, last, after, before, connectionResolver };
+            return Task.FromResult(new Connection<EfSource<TReturn>> {
+                TotalCount = 3,
+                PageInfo = new PageInfo { HasNextPage = true, HasPreviousPage = true }
+            });
+        }
+
         public Task<IList<Tuple<TKey, EfSource<TReturn>>>> ExecuteQueryForKeysAsync<TKey, TObject, TReturn>(IResolveFieldContext context, IQueryable<TObject> query, System.Linq.Expressions.Expression<Func<TObject, TKey>> keySelector, IEnumerable<TKey> keys, System.Linq.Expressions.Expression<Func<TObject, TReturn>> itemSelector) where TObject : class where TReturn : class
         {
             LastContext = context;
@@ -121,6 +133,11 @@ public class LinqGraphExecuterTests
         }
 
         public Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100) where TReturn : class
+        {
+            return Task.FromResult(new Connection<EfSource<TReturn>>());
+        }
+
+        public Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TReturn> connectionResolver) where TReturn : class
         {
             return Task.FromResult(new Connection<EfSource<TReturn>>());
         }
@@ -276,6 +293,44 @@ public class LinqGraphExecuterTests
         Assert.AreEqual(after, parameters.after);
         Assert.AreEqual(before, parameters.before);
         Assert.AreEqual(defaultPageSize, parameters.defaultPageSize);
+    }
+
+    [TestMethod]
+    public async Task ExecuteConnectionAsync_WithConnectionResolver_PassesThroughToTypedExecuter()
+    {
+        // Arrange
+        var testExecuter = new TestLinqGraphExecuter();
+        var serviceProvider = CreateServiceProvider(testExecuter);
+        var context = CreateContext(serviceProvider);
+        var executer = serviceProvider.GetRequiredService<ILinqGraphExecuter>();
+        var testQuery = new List<TestEntity>().AsQueryable();
+        int? first = 5;
+        int? last = null;
+        string? after = "cursor2";
+        string? before = null;
+        var connectionResolver = new GraphQL.Linq.ConnectionResolvers.EfSimpleConnectionResolver<TestDbContext, TestEntity>(25);
+
+        // Act
+        var result = await executer.ExecuteConnectionAsync<object, TestEntity>(
+            context, testQuery, first, last, after, before, connectionResolver);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.AreEqual(3, result.TotalCount);
+        Assert.IsTrue(result.PageInfo?.HasNextPage ?? false);
+        Assert.IsTrue(result.PageInfo?.HasPreviousPage ?? false);
+        Assert.AreSame(context, testExecuter.LastContext);
+        Assert.AreSame(testQuery, testExecuter.LastQuery);
+        Assert.AreEqual("ExecuteConnectionAsync_WithResolver", testExecuter.LastMethodCalled);
+
+        // Verify the parameters were passed through
+        var parameters = testExecuter.LastAdditionalParameter as dynamic;
+        Assert.IsNotNull(parameters);
+        Assert.AreEqual(first, parameters!.first);
+        Assert.AreEqual(last, parameters.last);
+        Assert.AreEqual(after, parameters.after);
+        Assert.AreEqual(before, parameters.before);
+        Assert.AreSame(connectionResolver, parameters.connectionResolver);
     }
 
     [TestMethod]
@@ -437,6 +492,12 @@ public class LinqGraphExecuterTests
         }
 
         public Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, int defaultPageSize = 100) where TReturn : class
+        {
+            LastQuery = query;
+            return Task.FromResult(new Connection<EfSource<TReturn>>());
+        }
+
+        public Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, GraphQL.Linq.ConnectionResolvers.IEfConnectionResolver<TReturn> connectionResolver) where TReturn : class
         {
             LastQuery = query;
             return Task.FromResult(new Connection<EfSource<TReturn>>());

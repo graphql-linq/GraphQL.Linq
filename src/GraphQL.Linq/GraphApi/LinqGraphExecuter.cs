@@ -72,6 +72,13 @@ public sealed class LinqGraphExecuter : ILinqGraphExecuter
     }
 
     /// <inheritdoc/>
+    public Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, IEfConnectionResolver<TReturn> connectionResolver) where TReturn : class
+    {
+        var executer = GetExecuter(context, query);
+        return executer.ExecuteConnectionAsync<TSource, TReturn>(context, query, first, last, after, before, connectionResolver);
+    }
+
+    /// <inheritdoc/>
     public Task<IList<Tuple<TKey, EfSource<TReturn>>>> ExecuteQueryForKeysAsync<TKey, TObject, TReturn>(IResolveFieldContext context, IQueryable<TObject> query, Expression<Func<TObject, TKey>> keySelector, IEnumerable<TKey> keys, Expression<Func<TObject, TReturn>> itemSelector) where TObject : class where TReturn : class
     {
         var executer = GetExecuter(context, query);
@@ -133,6 +140,33 @@ public class LinqGraphExecuter<TDbContext> : ILinqGraphExecuter<TDbContext>
             before);
 
         var queryResolver = new QueryConnectionResolver<TDbContext, TSource, TReturn>(_efGraphQLService, ctx => Task.FromResult(query), resolver);
+        return queryResolver.ResolveAsync(efConnectionContext);
+    }
+
+    /// <inheritdoc/>
+    public virtual Task<Connection<EfSource<TReturn>>> ExecuteConnectionAsync<TSource, TReturn>(IResolveFieldContext context, IQueryable<TReturn> query, int? first, int? last, string? after, string? before, IEfConnectionResolver<TReturn> connectionResolver) where TReturn : class
+    {
+        if (connectionResolver == null)
+            throw new ArgumentNullException(nameof(connectionResolver));
+
+        if (connectionResolver is not IEfConnectionResolver<TDbContext, TReturn> typedResolver) {
+            throw new ArgumentException(
+                $"The provided connection resolver must implement IEfConnectionResolver<{typeof(TDbContext).Name}, {typeof(TReturn).Name}>. " +
+                $"The resolver type '{connectionResolver.GetType().Name}' is not compatible with the database context type '{typeof(TDbContext).Name}'.",
+                nameof(connectionResolver));
+        }
+
+        var efConnectionContext = new ExplicitResolveEfConnectionContext<TDbContext, TSource>(
+            _efGraphQLService,
+            context,
+            typedResolver.IsBidirectional,
+            typedResolver.DefaultPageSize,
+            first,
+            last,
+            after,
+            before);
+
+        var queryResolver = new QueryConnectionResolver<TDbContext, TSource, TReturn>(_efGraphQLService, ctx => Task.FromResult(query), typedResolver);
         return queryResolver.ResolveAsync(efConnectionContext);
     }
 
