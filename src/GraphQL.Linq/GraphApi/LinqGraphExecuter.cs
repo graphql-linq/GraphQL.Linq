@@ -149,8 +149,7 @@ public class LinqGraphExecuter<TDbContext> : ILinqGraphExecuter<TDbContext>
         if (connectionResolver == null)
             throw new ArgumentNullException(nameof(connectionResolver));
 
-        if (connectionResolver is not IEfConnectionResolver<TDbContext, TReturn> typedResolver)
-        {
+        if (connectionResolver is not IEfConnectionResolver<TDbContext, TReturn> typedResolver) {
             throw new ArgumentException(
                 $"The provided connection resolver must implement IEfConnectionResolver<{typeof(TDbContext).Name}, {typeof(TReturn).Name}>. " +
                 $"The resolver type '{connectionResolver.GetType().Name}' is not compatible with the database context type '{typeof(TDbContext).Name}'.",
