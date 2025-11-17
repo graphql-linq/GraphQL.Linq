@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-Commercial%20%2B%20Free%20Tier-blueviolet)](LICENSE.txt)
 [![NuGet](https://img.shields.io/nuget/v/GraphQL.Linq)](https://www.nuget.org/packages/GraphQL.Linq/)
 [![Nuget](https://img.shields.io/nuget/dt/GraphQL.Linq)](https://www.nuget.org/packages/GraphQL.Linq)
-[![Coverage](https://codecov.io/gh/graphql-linq/GraphQL.Linq/branch/master/graph/badge.svg)](https://codecov.io/gh/graphql-linq/GraphQL.Linq)
+[![Coverage](https://coveralls.io/repos/github/graphql-linq/GraphQL.Linq/badge.svg?branch=master)](https://coveralls.io/github/graphql-linq/GraphQL.Linq?branch=master)
 
 Seamlessly integrate [GraphQL.NET](https://github.com/graphql-dotnet/graphql-dotnet) with [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) or [LinqToDB](https://linq2db.github.io/) by translating GraphQL queries directly into optimized LINQ expressions for efficient database access.
 
