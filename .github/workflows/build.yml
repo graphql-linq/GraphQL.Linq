@@ -34,3 +34,33 @@ jobs:
           path: out/*
       - name: Publish Nuget packages to GitHub registry
         run: dotnet nuget push "out/*" -k ${{secrets.GITHUB_TOKEN}}
+
+  test-coverage:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Use .NET Core SDKs
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build solution [Debug]
+        run: dotnet build --no-restore
+      - name: Test solution [Debug]
+        run: dotnet test --no-restore --no-build -- --coverage --coverage-output-format cobertura --coverage-output coverage.cobertura.xml
+      - name: Convert coverage report to cobertura format with filters
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.4.17
+        with:
+          reports: '**/coverage.cobertura.xml'
+          targetdir: '.'
+          reporttypes: 'Cobertura'
+          tag: 'build_${{ github.run_number }}'
+          assemblyfilters: +GraphQL*
+      - name: Submit coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./Cobertura.xml
+          format: cobertura

@@ -47,7 +47,7 @@ jobs:
         with:
           reports: '**/coverage.cobertura.xml'
           targetdir: '.'
-          reporttypes: 'Clover;HtmlSummary'
+          reporttypes: 'Clover;HtmlSummary;Cobertura'
           tag: 'test_${{ github.run_number }}'
           assemblyfilters: +GraphQL*
       - name: Convert coverage report to html
@@ -65,6 +65,7 @@ jobs:
           path: |
             **/coverage.cobertura.xml
             Clover.xml
+            Cobertura.xml
             code_coverage/**
             summary.html
       - name: Monitor coverage
@@ -75,3 +76,9 @@ jobs:
           clover_file: "Clover.xml"
           threshold_alert: 60
           threshold_warning: 80
+      - name: Submit coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./Cobertura.xml
+          format: cobertura
