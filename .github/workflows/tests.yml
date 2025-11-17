@@ -82,3 +82,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./Cobertura.xml
           format: cobertura
+          base-path: .
+          debug: true
