@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-dotnet@v5
         with:
           global-json-file: global.json
-          source-url: https://nuget.pkg.github.com/Shane32/index.json
+          source-url: https://nuget.pkg.github.com/graphql-linq/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Install dependencies
