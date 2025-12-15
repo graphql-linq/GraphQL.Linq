@@ -2,7 +2,7 @@
 
   <PropertyGroup Label="Сommon properties">
     <!-- Set version and default properties -->
-    <VersionPrefix>11.1.1-preview</VersionPrefix>
+    <VersionPrefix>11.2.1-preview</VersionPrefix>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
