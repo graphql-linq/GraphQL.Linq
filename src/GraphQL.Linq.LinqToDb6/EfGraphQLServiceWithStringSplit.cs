@@ -23,7 +23,13 @@ public class EfGraphQLServiceWithStringSplit<TDbContext> : EfGraphQLService<TDbC
     {
     }
 
-    private static readonly MethodInfo _queryableContainsMethod = typeof(Queryable).GetMethods(BindingFlags.Public | BindingFlags.Static).Single(x => x.Name == nameof(Queryable.Contains) && x.GetParameters().Length == 2);
+    static EfGraphQLServiceWithStringSplit()
+    {
+        Expression<Func<IQueryable<object>, object, bool>> expr = (q, v) => q.Contains(v);
+        _queryableContainsMethod = ((MethodCallExpression)expr.Body).Method.GetGenericMethodDefinition();
+    }
+
+    private static readonly MethodInfo _queryableContainsMethod;
     private static readonly ConcurrentDictionary<Type, MethodInfo> _typedContainsMethods = new ConcurrentDictionary<Type, MethodInfo>();
     /// <inheritdoc/>
     public override Expression<Func<TObject, bool>> CreateWhereInExpression<TKey, TObject>(Func<TDbContext> dbContextFactory, Expression<Func<TObject, TKey>> keySelector, IEnumerable<TKey> keys)
