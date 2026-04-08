@@ -474,6 +474,14 @@ EfField(x => x.FontStyle)
         Underline = (fs & 4) != 0,
         Strikeout = (fs & 8) != 0
     });
+
+// Context-aware post-processing - access GraphQL arguments alongside the db result
+EfField("formattedPrice", x => new { x.Price, x.CurrencyCode })
+    .ThenResolve((context, val) => {
+        var locale = context.GetArgument<string>("locale");
+        return FormatPrice(val.Price, val.CurrencyCode, locale);
+    })
+    .Argument<string>("locale");
 ```
 
 ### Advanced: Context-Aware Fields
