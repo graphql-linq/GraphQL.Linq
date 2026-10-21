@@ -36,6 +36,10 @@ public sealed class EfDbPrimaryKeyNamesProvider<TDbContext> : IEfDbPrimaryKeyNam
         if (model == null)
             throw new ArgumentNullException(nameof(model));
         foreach (var entityType in model.GetEntityTypes()) {
+            // Skip inferred entity types as they have no dedicated CLR type (many-to-many join tables)
+            if (entityType.HasSharedClrType)
+                continue;
+
             var primaryKey = entityType.FindPrimaryKey();
             //This can happen for views
             if (primaryKey == null) {
